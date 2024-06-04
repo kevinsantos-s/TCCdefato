@@ -11,11 +11,46 @@ nav{
     z-index: 10; /*vai sobrepor todos os itens da pagina quando usar scroll*/
 }
 .logo{
-    width: 100px;
+    width: 15%;
 }
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 5px 15px;
+    margin: 5px 20px;
     font-size: 16px;
+}
+.btn{
+    background: #FFF;
+    color: #212121;
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn:hover{
+    background-color: #F36D04;
+    color: white;
+    transition: 0.2s;
+  }
+  .btn-login{
+    background-color: #F36D04;
+    color: #FFF;
+    padding: 8px 24px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-login:hover{
+    background-color: #863a00;
+    transition: 0.2s;
 }
