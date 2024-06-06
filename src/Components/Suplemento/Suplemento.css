@@ -1,0 +1,52 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    background-color: #c55b11;
+    color: white;
+  }
+  
+  .card-img {
+    width: 55%;
+    height: auto;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  .card-title {
+    margin: 10 05px;
+    color: white;
+  }
+  
+  .card-description {
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .comprar-btn {
+    background-color: white;
+    color: #c55b11;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .comprar-btn:hover {
+    background-color: #c9c8c8;
+  }
+  

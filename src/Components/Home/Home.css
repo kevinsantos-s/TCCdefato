@@ -5,6 +5,7 @@
     url('../../assets/home2.jpg');
     background-size: cover;
     background-position: center;
+    cursor: default;
     color: #fff;
     display: flex;
     align-items: center;
