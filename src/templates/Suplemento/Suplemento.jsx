@@ -1,5 +1,6 @@
 import React from 'react'
 import './Suplemento.css'
+import { Link } from 'react-router-dom';
 import suplementoA from '../../assets/suplemento-1.png'
 import suplementoB from '../../assets/suplemento-2.png'
 import suplementoC from '../../assets/suplemento-3.png'
@@ -32,7 +33,7 @@ const Suplemento = () => {
           <div className="card-body">
             <h2 className="card-title">{card.titulo}</h2>
             <p className="card-description">{card.descricao}</p>
-            <button className="comprar-btn">Peça já</button>
+            <Link to={'/register'} className="comprar-btn">Peça já</Link>
           </div>
         </div>
       ))}

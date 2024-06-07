@@ -11,7 +11,7 @@
 
 .about-kitfit h4 {
     font-size: 1.4em;
-    color: #6c757d;
+    color: #F36D04;
     margin-bottom: 10px;
 }
 
@@ -36,9 +36,5 @@
 .sobre2{
     display: flex;
     flex-direction: column;   
-}
-.textolegal{
-    background: #ff6c04;
-    border-radius: 5px;
 }
 

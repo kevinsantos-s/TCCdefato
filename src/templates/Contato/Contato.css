@@ -57,15 +57,21 @@
     margin-bottom: 5px;
     resize: none;
 }
-.dark-btn{
-    margin-top: 10px;
+.btn-enviar{
+    margin-top: 3px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
     background: #F36D04;
 }
-.dark-btn:hover{
+.btn-enviar:hover{
     background-color: #863a00;
     transition: 0.2s;
 }
-.btn img{
+.btn-enviar img{
     width: 20px;
     margin-left: 10px;
 }

@@ -38,12 +38,9 @@ nav ul li {
     transition: 0.2s;
   }
   .btn-login{
-<<<<<<< HEAD
     background: #F36D04;
-=======
-    background-color: #F36D04;
-    color: #FFF;
->>>>>>> 8ad27cb657d69631220d94390df33d6156f38131
+    color: #ffffff;
+    text-decoration: none;
     padding: 8px 24px;
     font-size: 16px;
     border-radius: 30px;
@@ -58,10 +55,7 @@ nav ul li {
     background-color: #863a00;
     transition: 0.2s;
 }
-<<<<<<< HEAD
 .dark-nav{
     background: #000000;
     transition: 0.5s;
 }
-=======
->>>>>>> 8ad27cb657d69631220d94390df33d6156f38131

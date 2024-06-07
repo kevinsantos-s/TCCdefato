@@ -59,7 +59,7 @@ const Contato = () => {
                 <input type="tel" name='phone' placeholder="Insira seu telefone" required></input>
                 <label>Escreva sua mensagem aqui</label>
                 <textarea name="message" rows="6" placeholder="Escreva sua mensagem" required></textarea>
-                <button type='submit' className='btn dark-btn'>Enviar <img src={white_arrow} alt="" /></button>
+                <button type='submit' className='btn-enviar'>Enviar <img src={white_arrow} alt="" /></button>
             </form>
             <span>{result}</span>
         </div>
