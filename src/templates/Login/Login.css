@@ -1,4 +1,4 @@
-.registerform{
+.loginform{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -6,15 +6,16 @@
     background: linear-gradient(#ff8800, #000000);
     padding-bottom: 30px; 
 }
-.quad{
+.quad2{
     margin-top: 100px ;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 180px;
+    margin-right: 180px;
     border-radius: 20px;
+    margin-bottom: 280px;
     height: 65vh;
     background-color: #ffffff;
 }
-.header{
+.header2{
     display: flex;
     margin-top: 15px;
     flex-direction: column;
@@ -26,7 +27,6 @@
     font-size: 48px;
     font-weight: 700;
 }
-
 .underline{
     width: 61px;
     height: 6px;
@@ -34,13 +34,13 @@
     border-radius: 9px;
 }
 
-.inputs{
+.inputs2{
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
-.input{
+.input2{
     display: flex;
     align-items: center;
     margin: auto;
@@ -50,11 +50,11 @@
     border-radius: 6px;
 }
 
-.input img{
+.input2 img{
     margin: 0px 30px;
 }
 
-.input input{
+.input2 input{
     height: 50px;
     width: 400px;
     background: transparent;
@@ -64,24 +64,15 @@
     font-size: 19px;
 }
 
-.alreadyhave{
-    padding-left: 250px;
-    margin-top: 15px;
-    color: #797979;
+.forgotpass{
+    padding-left: 225px;
+    margin-top: 25px;
+    color: #ff8800;
     font-size: 18px;
 }
-
-.alreadyhave span{
-    margin-left: 5px;
-    color: #ff8800;
-    cursor: pointer;
+.forgotpass:hover{
+   color: #863a00;
 }
-.alreadyhave span:hover{
-    color: #863a00;
-    cursor: pointer;
-}
-
-
 .submit-container{ 
     gap: 30px;
     margin: 20px auto;
@@ -92,7 +83,8 @@
     justify-content: center;
     align-items: center;
     width: 220px;
-    margin-left: 390px;
+    
+    margin-left: 360px;
     margin-top: 30px;
     height: 59px;
     color: #fff;
