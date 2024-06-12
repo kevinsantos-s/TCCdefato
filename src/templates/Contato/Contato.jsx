@@ -36,8 +36,8 @@ const Contato = () => {
     };
 
   return (
-    <div class="contato-container">
-    <div class="contato-heading">
+    <div className="contato-container" id="contatoscroll">
+    <div className="contato-heading">
         <h2>Contate-nos</h2>
         <h3>Entrar em contato</h3>
     </div>

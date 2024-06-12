@@ -4,7 +4,7 @@ import aboutImage from '../../assets/sobre2.png'
 
 const About = () => {
   return (
-    <div className="about-kitfit">
+    <div className="about-kitfit" id="aboutscroll">
       <div className="sobre">
       <img src={aboutImage} alt="Sobre a KITFIT" className="about-image" />
       <div className="sobre2">

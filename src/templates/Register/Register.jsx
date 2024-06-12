@@ -33,7 +33,7 @@ const Register = () => {
 
             <div className="alreadyhave">Já tem uma conta?<span><Link to={"/login"}>Faça Login</Link></span></div>
             <div className="submit-container">
-                <div className="submit">Cadastrar</div>
+                <Link to={"/login"} className="submit">Cadastrar</Link>
                 
             </div>
             </div>

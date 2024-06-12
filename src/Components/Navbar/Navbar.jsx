@@ -10,8 +10,8 @@ const Navbar = () => {
             <img src={kitFit} alt="" className="logo" />
             <ul>
                 <li><button className="btn">Início</button></li>
-                <li><button className="btn">Sobre nós</button></li>
-                <li><button className="btn">Contato</button></li>
+                <li><a href="#aboutscroll" className="btn">Sobre nós</a></li>
+                <li><a href='#contatoscroll' className="btn">Contato</a></li>
                 <li> <Link to={'/register'} className="btn btn-login">Entrar/Cadastrar-se</Link></li>
             </ul>
         </nav>

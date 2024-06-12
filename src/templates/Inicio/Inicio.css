@@ -24,3 +24,8 @@
     margin: 10px auto 20px;
     line-height: 1.4;
 }
+@media screen and (max-width: 800px){
+    .home-text{
+     margin-top: 80px;
+    }
+  }

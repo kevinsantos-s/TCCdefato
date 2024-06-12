@@ -5,7 +5,7 @@
 }
 
 .about-image {
-    max-width: 50%;
+    width: 50%;
     margin-right: 20px;
 }
 
@@ -37,4 +37,12 @@
     display: flex;
     flex-direction: column;   
 }
-
+@media screen and (max-width: 840px) {
+    .sobre{
+        flex-direction: column;
+    }
+    .about-image{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

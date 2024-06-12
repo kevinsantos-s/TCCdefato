@@ -36,7 +36,6 @@
 }
 .contato-col p{
     max-width: 450px;
-    list-style: 0.3;
 }
 .contato-col ul li{
     display: flex;
@@ -78,4 +77,7 @@
 .contato-col span{
     display: block;
     margin: 20px 0;
+}
+@media screen and (max-width: 750px){
+    .contato{flex-direction: column;}
 }

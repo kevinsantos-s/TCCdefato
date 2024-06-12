@@ -23,6 +23,11 @@ const Forgotpass = () => {
        <img src={password_icon} alt=""/>
        <input type="password" placeholder="Senha"/>
       </div>
+
+      <div className='input2'>
+       <img src={password_icon} alt=""/>
+       <input type="password" placeholder="Confirmar Senha"/>
+      </div>
     </div>
   
     <div className="submit-container">

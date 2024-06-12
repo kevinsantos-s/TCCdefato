@@ -8,7 +8,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10; /*vai sobrepor todos os itens da pagina quando usar scroll*/
+    z-index: 10; 
 }
 .logo{
     width: 15%;
@@ -58,4 +58,7 @@ nav ul li {
 .dark-nav{
     background: #000000;
     transition: 0.5s;
+}
+@media screen {
+    
 }
