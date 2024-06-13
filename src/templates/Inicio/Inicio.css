@@ -29,3 +29,13 @@
      margin-top: 80px;
     }
   }
+  @media screen and (max-width: 2500px) {
+    .home{
+        margin-top: 70px;
+    }
+  }
+  @media screen and (max-width: 1450px){
+    .home{
+        margin-top: 0px;
+    }
+  }
