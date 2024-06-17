@@ -30,8 +30,8 @@ const Login = () => {
   
 
     <div className="submit-container">
-        <div className="submit">Entrar</div>
-        
+        <Link to={"/home"} className="submit">Entrar</Link>
+      
     </div>
     </div>
 </div>

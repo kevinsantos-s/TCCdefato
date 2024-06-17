@@ -65,7 +65,7 @@
 }
 
 .alreadyhave{
-    padding-left: 250px;
+    padding-left: 570px;
     margin-top: 15px;
     color: #797979;
     font-size: 18px;
@@ -85,6 +85,7 @@
 .submit-container{ 
     gap: 30px;
     margin: 20px auto;
+    padding-left: 370px;
 }
 
 .submit{
@@ -92,7 +93,7 @@
     justify-content: center;
     align-items: center;
     width: 220px;
-    margin-left: 390px;
+    margin-left: 650px;
     margin-top: 30px;
     height: 59px;
     color: #fff;
