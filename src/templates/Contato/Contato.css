@@ -57,8 +57,10 @@
     resize: none;
 }
 .btn-enviar{
-    margin-top: 3px;
+    margin-top: 10px;
     padding: 10px 10px;
+    display: flex;
+    align-items: center; /* Alinha o texto e a seta verticalmente */
     cursor: pointer;
     font-size: 16px;
     border-radius: 30px;
@@ -72,7 +74,9 @@
 }
 .btn-enviar img{
     width: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-top: 4px;
+  
 }
 .contato-col span{
     display: block;

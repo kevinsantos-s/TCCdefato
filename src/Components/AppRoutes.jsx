@@ -1,10 +1,12 @@
-import { Routes, Route, Router } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import App from "../templates/App/App"
 import Inicio from "../templates/Inicio/Inicio"
-import Register from "../templates/Register/Register"
 import Login from "../templates/Login/Login"
-import Forgotpass from "../templates/Login/Forgotpass"
 import Home from "../templates/Home/Home"
+import Usuario from "../templates/Usuario/Usuario"
+import UsuarioEditar from "../templates/Usuario/UsuarioEditar"
+import UsuarioNovo from "../templates/Usuario/UsuarioNovo"
+import UsuariosLista from "../templates/Usuario/UsuariosLista"
 
 const AppRoutes = () => {
 
@@ -13,10 +15,14 @@ const AppRoutes = () => {
             <Routes>
             <Route path="/" element={<App />} />
             <Route path="/inicio" element={<Inicio />} />
-            <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/forgotpass" element={<Forgotpass/>} />
-            <Route path="/home" element={<Home/>} />
+            <Route path="/home" element={<Home />} />
+
+            
+           <Route path="/usuario" element={<Usuario />} />
+           <Route path="/usuarioslista" element={<UsuariosLista />} />
+           <Route path="/usuarionovo" element={<UsuarioNovo />} />
+           <Route path="/usuarioeditar" element={<UsuarioEditar />} />
             </Routes>
         </div>
     )
