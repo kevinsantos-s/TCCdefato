@@ -1,13 +1,15 @@
 import React from 'react'
-import './Inicio.css'
+
+import Maromba from '../../assets/banner.png';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 const Home = () => {
   return (
    
-    <div className='home container' id='inicioscroll'>
+    <div  id='inicioscroll'>
       <div className="home-text">
-        <h1>Nós garantimos os melhores suplementos para a melhor performance</h1>
+      <img className='w-screen h-[600px]' src={Maromba} alt="" />
+       
       </div>
     </div>
   )

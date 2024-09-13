@@ -29,7 +29,7 @@ const Suplemento = () => {
     <div className="card-container">
       {cards.map((card, index) => (
         <div className="card" key={index}>
-          <img src={card.imagem} alt={card.titulo} className="card-img" />
+          <img src={card.imagem} alt={card.titulo} className="w-full " />
           <div className="card-body">
             <h2 className="card-title">{card.titulo}</h2>
             <p className="card-description">{card.descricao}</p>
