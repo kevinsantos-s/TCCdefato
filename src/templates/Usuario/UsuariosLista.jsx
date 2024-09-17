@@ -4,6 +4,7 @@ import Sidebar from '../../Components/Menu/Sidebar'
 import { useState } from "react"
 import { useEffect } from "react"
 import UsuarioService from "../../services/UsuarioService"
+import { listarUsuario } from "../../common/services/Service"
 
 const UsuariosLista = () => {
     const navigate = useNavigate();
@@ -11,6 +12,7 @@ const UsuariosLista = () => {
         navigate('/usuarioler')
     }
     const [usuarios, setUsuarios] = useState([]);
+    /*
     useEffect(() => {
         UsuarioService.findAll().then(
             (response) => {
@@ -22,6 +24,21 @@ const UsuariosLista = () => {
             console.log(error);
         })
     }, []);
+    */
+   useEffect(()=>{
+    async function getUsuario(){
+        const data = await listarUsuario().then(
+            console.log("FOI")
+            ).catch((error)=>{
+            console.log(error)
+        }).catch((error)=>{
+            console.log(error);
+        })
+        
+        console.log(data);
+    }
+    getUsuario();
+   }, [])
 
     return (
         <div className="d-flex">
