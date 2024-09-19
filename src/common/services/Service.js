@@ -11,3 +11,16 @@ export async function listarUsuario(){
         return false;
     }
 }
+
+export async function listarKit(){
+    let URL = "kit/findAll";
+    try{
+        const response = await API.get(URL);
+        console.log(response.data);
+        return response.data;
+    }catch (error){
+        console.log(error)
+        return false;
+    }
+}
+
