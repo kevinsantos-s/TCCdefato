@@ -12,42 +12,24 @@ const UsuariosLista = () => {
         navigate('/usuarioler')
     }
     const [usuarios, setUsuarios] = useState([]);
-    /*
+    console.log(usuarios);
     useEffect(() => {
-        UsuarioService.findAll().then(
-            (response) => {
-                const usuarios = response.data;
-                setUsuarios(usuarios);
-                console.log(usuarios);
-            }
-        ).catch((error) => {
-            console.log(error);
-        })
-    }, []);
-    */
-   useEffect(()=>{
-    async function getUsuario(){
-        const data = await listarUsuario().then(
-            console.log("FOI")
-            ).catch((error)=>{
-            console.log(error)
-        }).catch((error)=>{
-            console.log(error);
-        })
-        
-        console.log(data);
-    }
-    getUsuario();
-   }, [])
+        async function getUsuario() {
+            const data = await listarUsuario()
+            setUsuarios(data)
+        }
+        getUsuario();
+    }, [])
 
     return (
-        <div className="d-flex">
+        // <div className="d-flex" style={{display: "flex", flexDirection: "row"}}>
+        <div className="d-flex" style={{display: "flex", flexDirection: "row"}}>
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
                     goto={'/usuario'}
                     title={'Lista de Usuarios'}
-                    
+
                 />
                 <section className="m-2 p-2 shadow-lg">
                     <div>
@@ -64,21 +46,21 @@ const UsuariosLista = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                            {usuarios?.map((usuario) => (
-                                <tr key={usuario.id}>
-                                    <td scope="row">{usuario.id}</td>
-                                    <td>{usuario.nome}</td>
-                                    <td>{usuario.email}</td>
-                                    <td>{usuario.nivelAcesso}</td>
-                                    <td>{usuario.dataCadastro}</td>
-                                    <td>{usuario.statusUsuario}</td>
-                                    <td>
-                                        <button type="button"
+                                {usuarios?.map((usuario) => (
+                                    <tr key={usuario.id}>
+                                        <td scope="row">{usuario.id}</td>
+                                        <td>{usuario.nome}</td>
+                                        <td>{usuario.email}</td>
+                                        <td>{usuario.nivelAcesso}</td>
+                                        <td>{usuario.dataCadastro}</td>
+                                        <td>{usuario.statusUsuario}</td>
+                                        <td>
+                                            <button type="button"
                                                 className="btn btn-sm btn-warning">
-                                            <i className="bi bi-envelope-open me-2"></i>Abrir
-                                        </button>
-                                    </td>
-                                </tr>
+                                                <i className="bi bi-envelope-open me-2"></i>Abrir
+                                            </button>
+                                        </td>
+                                    </tr>
                                 ))}
                             </tbody>
                         </table>

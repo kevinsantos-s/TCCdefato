@@ -6,6 +6,9 @@ import Sidebar from '../../Components/Menu/Sidebar'
 const Home = () => {
 
     return (
+        //<div className="d-flex">
+        //  <div className="p-3 w-100">
+        
         <div className="d-flex">
            <Sidebar />
            <div className="p-3 w-100">
