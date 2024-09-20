@@ -4,9 +4,9 @@ import './Sidebar.css';
 const Sidebar = () => {
 
     return (
-             // <div className="flex justify-around align-center px-2 py-4 border-b-2 rounded">
-             //  <span className="font-bold fst-italic">KITFIT</span>
-             //  <nav className="nav flex flex-col">
+             <div className="flex justify-around align-center px-2 py-4 border-b-2 rounded">
+              <span className="font-bold">KITFIT</span>
+              <nav className="nav flex flex-col"></nav>
         <div className="sidebar">
             <div className="flex justify-around items-center px-2 py-4 border-b-2 rounded">
            
@@ -20,6 +20,7 @@ const Sidebar = () => {
                 <Link className="nav-link" to={'/produto'}>Kit's</Link>
                 <Link className="nav-link" to={'/mensalidade'}>Mensalidade</Link>
             </nav>
+        </div>
         </div>
     )
 }
