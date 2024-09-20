@@ -22,8 +22,8 @@ const UsuariosLista = () => {
     }, [])
 
     return (
-        // <div className="d-flex" style={{display: "flex", flexDirection: "row"}}>
-        <div className="d-flex" style={{display: "flex", flexDirection: "row"}}>
+        <div className="flex flex-row">
+        <div className="flex flex-row" >
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
@@ -57,7 +57,8 @@ const UsuariosLista = () => {
                                         <td>
                                             <button type="button"
                                                 className="btn btn-sm btn-warning">
-                                                <i className="bi bi-envelope-open me-2"></i>Abrir
+                                                {/* <i className="bi bi-envelope-open me-2"></i> */}
+                                                Abrir
                                             </button>
                                         </td>
                                     </tr>
@@ -67,6 +68,7 @@ const UsuariosLista = () => {
                     </div>
                 </section>
             </div>
+        </div>
         </div>
     )
 }

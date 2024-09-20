@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
+import "../Header/Header.css";
 
 const Header = ({goto, title, logo}) => {
 
     return (
         <div className="
-            d-flex justify-content-between align-content-center 
-            p-3 border-bottom shadow rounded">
-            <Link to={goto} className="btn btn-info shadow">Voltar</Link>
+            flex justify-between align-center 
+            p-3 border-b-2 rounded">
+            <Link to={goto} className=""><button className="Botão">Voltar</button></Link>
             <div>
-                <span className="fw-bold h2">{title}</span>
+                <span className="font-bold h-2">{title}</span>
             </div>
             <div>
                 <img src={logo} alt="logo" />

@@ -4,11 +4,11 @@ import './Sidebar.css';
 const Sidebar = () => {
 
     return (
-             // <div className="d-flex justify-content-around align-items-center px-2 py-4 border-bottom rounded">
-             //  <span className="fw-bold fst-italic">KITFIT</span>
-             //  <nav className="nav flex-column">
+             // <div className="flex justify-around align-center px-2 py-4 border-b-2 rounded">
+             //  <span className="font-bold fst-italic">KITFIT</span>
+             //  <nav className="nav flex flex-col">
         <div className="sidebar">
-            <div className="flex justify-around items-center px-2 py-4 border-bottom rounded">
+            <div className="flex justify-around items-center px-2 py-4 border-b-2 rounded">
            
                 
                 <span className="fw-bold fst-italic">KITFIT</span>
