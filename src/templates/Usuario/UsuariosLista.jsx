@@ -25,7 +25,7 @@ const UsuariosLista = () => {
         <div className="flex flex-row">
         <div className="flex flex-row" >
             <Sidebar />
-            <div className="p-3 w-100">
+            <div className="w-full">
                 <Header
                     goto={'/usuario'}
                     title={'Lista de Usuarios'}
