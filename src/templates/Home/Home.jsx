@@ -6,18 +6,20 @@ import Sidebar from '../../Components/Menu/Sidebar'
 const Home = () => {
 
     return (
-        //<div className="d-flex">
-        //  <div className="p-3 w-100">
+        <div className="flex">
+         <div className="w-full">
         
-        <div className="d-flex">
+        <div className="flex">
            <Sidebar />
-           <div className="p-3 w-100">
+           <div className="p-3 w-screen">
                 <Header 
                     goto={'/home'}
                     title={'Home'}
                     />
                 <h2>Conteúdo Home</h2>
            </div>
+        </div>
+        </div>
         </div>
     )
 }

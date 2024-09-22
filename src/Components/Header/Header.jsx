@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"; 
 import "../Header/Header.css";
+import Logo from '../../assets/KitFit.png'
 
 const Header = ({goto, title, logo}) => {
 
