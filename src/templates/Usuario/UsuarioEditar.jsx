@@ -44,7 +44,7 @@ const UsuarioEditar = () => {
                         </div>
                         
                         <div className="col-12">
-                            <button type="submit" className="bg-orange">
+                            <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500">
                                 Gravar
                             </button>
                         </div>

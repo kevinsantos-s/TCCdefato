@@ -15,10 +15,10 @@ const Usuario = () => {
                <section className="m-2 p-2 shadow-lg">
                     <div className="flex justify-around">
                         <Link to={'/usuarionovo'}>
-                            <button className="bg-orange"> Novo Usuário</button>
+                            <button className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500"> Novo Usuário</button>
                         </Link>
                         <Link to={'/usuarioslista'} >
-                            <button className="bg-orange">Lista de Usuários</button>
+                            <button className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500">Lista de Usuários</button>
                         </Link>
                     </div>
                 </section>
