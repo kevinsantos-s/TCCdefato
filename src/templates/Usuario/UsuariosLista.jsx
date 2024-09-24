@@ -12,7 +12,7 @@ const UsuariosLista = () => {
         navigate('/usuarioler')
     }
     const [usuarios, setUsuarios] = useState([]);
-    console.log(usuarios);
+
     useEffect(() => {
         async function getUsuario() {
             const data = await listarUsuario()
