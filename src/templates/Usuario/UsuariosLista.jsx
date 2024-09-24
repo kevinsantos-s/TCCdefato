@@ -56,7 +56,7 @@ const UsuariosLista = () => {
                                         <td>{usuario.statusUsuario}</td>
                                         <td>
                                             <button type="button"
-                                                className="btn btn-sm btn-warning">
+                                                className="bg-orange text-white py-2 px-4 rounded md:ml-8  hover:bg-white hover:text-orange duration-500">
                                                 {/* <i className="bi bi-envelope-open me-2"></i> */}
                                                 Abrir
                                             </button>
