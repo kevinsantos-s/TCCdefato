@@ -3,22 +3,21 @@ import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
 import { useState } from "react"
 import { useEffect } from "react"
-import UsuarioService from "../../services/UsuarioService"
-import { listarUsuario } from "../../common/services/Service"
+import { listarKit } from "../../common/services/Service"
 
-const UsuariosLista = () => {
+const KitsLista = () => {
     const navigate = useNavigate();
     const goTo = () => {
-        navigate('/usuarioler')
+        navigate('/kitler')
     }
-    const [usuarios, setUsuarios] = useState([]);
+    const [kits, setKits] = useState([]);
 
     useEffect(() => {
-        async function getUsuario() {
-            const data = await listarUsuario()
-            setUsuarios(data)
+        async function getKit() {
+            const data = await listarKit()
+            setKits(data)
         }
-        getUsuario();
+        getKit();
     }, [])
 
     return (
@@ -27,8 +26,8 @@ const UsuariosLista = () => {
             <Sidebar />
             <div className="w-full">
                 <Header
-                    goto={'/usuario'}
-                    title={'Lista de Usuarios'}
+                    goto={'/kit'}
+                    title={'Lista de Kits'}
 
                 />
                 <section className="m-2 p-2 shadow-lg ">
@@ -38,26 +37,24 @@ const UsuariosLista = () => {
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Acesso</th>
-                                    <th scope="col">Cadastro</th>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Categoria</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {usuarios?.map((usuario) => (
-                                    <tr key={usuario.id}>
-                                        <td scope="row">{usuario.id}</td>
-                                        <td>{usuario.nome}</td>
-                                        <td>{usuario.email}</td>
-                                        <td>{usuario.nivelAcesso}</td>
-                                        <td>{usuario.dataCadastro}</td>
-                                        <td>{usuario.statusUsuario}</td>
+                                {kits?.map((kit) => (
+                                    <tr key={kit.id}>
+                                        <td scope="row">{kit.id}</td>
+                                        <td>{kit.nome}</td>
+                                        <td>{kit.codigo}</td>
+                                        <td>{kit.preco}</td>
+                                        <td>{kit.statusKit}</td>
                                         <td>
-                                            <button type="button"
+                                            <button type="button"  onClick={() => goTo()}
                                                 className="bg-orange text-white py-2 px-4 rounded md:ml-8  hover:bg-white hover:text-orange duration-500">
-                                                {/* <i className="bi bi-envelope-open me-2"></i> */}
                                                 Abrir
                                             </button>
                                         </td>
@@ -73,4 +70,4 @@ const UsuariosLista = () => {
     )
 }
 
-export default UsuariosLista
+export default KitsLista

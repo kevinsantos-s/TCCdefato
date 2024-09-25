@@ -7,6 +7,10 @@ import Usuario from "../templates/Usuario/Usuario"
 import UsuarioEditar from "../templates/Usuario/UsuarioEditar"
 import UsuarioNovo from "../templates/Usuario/UsuarioNovo"
 import UsuariosLista from "../templates/Usuario/UsuariosLista"
+import Kit from "../templates/Kit/Kit"
+import KitsLista from "../templates/Kit/KitLista"
+import KitNovo from "../templates/Kit/KitNovo"
+import KitEditar from "../templates/Kit/KitEditar"
 
 const AppRoutes = () => {
 
@@ -23,6 +27,11 @@ const AppRoutes = () => {
            <Route path="/usuarioslista" element={<UsuariosLista />} />
            <Route path="/usuarionovo" element={<UsuarioNovo />} />
            <Route path="/usuarioeditar" element={<UsuarioEditar />} />
+
+           <Route path="/kit" element={<Kit />} />
+           <Route path="/kitlista" element={<KitsLista />} />
+           <Route path="/kitnovo" element={<KitNovo />} />
+           <Route path="/kiteditar" element={<KitEditar />} />
             </Routes>
         </div>
     )

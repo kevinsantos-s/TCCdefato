@@ -14,7 +14,7 @@ const Sidebar = () => {
    const menus = [
     {name:"Dashboard",link:'/home',icon: LuLayoutDashboard },
     {name:"Usuario",link:'/usuarioslista',icon: CiUser  },
-    {name:"Kits",link:'/produto',icon: MdOutlineProductionQuantityLimits  },
+    {name:"Kits",link:'/kit',icon: MdOutlineProductionQuantityLimits  },
     {name:"Mensalidade",link:'/mensalidade',icon: FaRegCreditCard },
    ]
     
