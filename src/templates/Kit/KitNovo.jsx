@@ -29,7 +29,7 @@ const KitNovo = () => {
                     goto={'/kit'}
                     title={'Novo Kit'}
                 />
-                <section className="m-2 p-2 shadow-lg">
+                <section className="m-2 p-2">
                     <form className="flex-row gap-3">
 
                         <div className="flex flex-col">
@@ -58,7 +58,7 @@ const KitNovo = () => {
                         </div>
 
                         <div className="flex justify-start">
-                            <button type="submit" onClick={handleSubmit} className="bg-orange text-white py-3 px-6 rounded-lg shadow hover:bg-black hover:text-orange duration-300">
+                            <button type="submit" onClick={handleSubmit} className="bg-orange text-white mt-6 py-3 px-6 rounded-lg shadow hover:bg-black hover:text-orange duration-300">
                                 Gravar
                             </button>
                         </div>

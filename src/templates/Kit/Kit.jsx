@@ -12,7 +12,7 @@ const Kit = () => {
                     goto={'/home'}
                     title={'Kits'}
                     />
-               <section className="m-2 p-2 shadow-lg">
+               <section className="m-2 p-2 ">
                     <div className="flex justify-around">
                         <Link to={'/kitnovo'}>
                             <button className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500"> Novo Kits</button>

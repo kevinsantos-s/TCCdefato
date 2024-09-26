@@ -8,7 +8,7 @@ import { listarKit } from "../../common/services/Service"
 const KitsLista = () => {
     const navigate = useNavigate();
     const goTo = () => {
-        navigate('/kitler')
+        navigate('/kiteditar')
     }
     const [kits, setKits] = useState([]);
 
@@ -30,33 +30,38 @@ const KitsLista = () => {
                     title={'Lista de Kits'}
 
                 />
-                <section className="m-2 p-2 shadow-lg ">
+                <section className="relative overflow-x-auto">
                     <div >
-                        <table className="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Código</th>
-                                    <th scope="col">Preço</th>
-                                    <th scope="col">Categoria</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Abrir</th>
+                        <table  className="w-[100%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-black bg-grey uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr scope="col" className="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">ID</th>
+                                    <th scope="col" className="px-6 py-3">Nome</th>
+                                    <th scope="col" className="px-6 py-3">Descrição</th>
+                                    <th scope="col" className="px-6 py-3">Código</th>
+                                    <th scope="col" className="px-6 py-3">Preço</th>
+                                    <th scope="col" className="px-6 py-3">Status</th>
+                          
+                                    <th scope="col" className="px-6 py-3">Abrir</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className="relative">
                                 {kits?.map((kit) => (
-                                    <tr key={kit.id}>
-                                        <td scope="row">{kit.id}</td>
-                                        <td>{kit.nome}</td>
-                                        <td>{kit.codigo}</td>
-                                        <td>{kit.preco}</td>
-                                        <td>{kit.statusKit}</td>
-                                        <td>
-                                            <button type="button"  onClick={() => goTo()}
-                                                className="bg-orange text-white py-2 px-4 rounded md:ml-8  hover:bg-white hover:text-orange duration-500">
+                                    <tr scope="row" className="px-6 py-4 border-t-2 font-medium text-gray-900 whitespace-nowrap dark:text-white" key={kit.id}>
+                                        <td className="px-6 py-4 border-t-2 " >{kit.id}</td>
+                                        <td className="px-6 py-4 border-t-2 ">{kit.nome}</td>
+                                        <td className="px-6 py-4 border-t-2 ">{kit.descricao}</td>
+                                        <td className="px-6 py-4 border-t-2 ">{kit.codigo}</td>
+                                        <td className="px-6 py-4 border-t-2 ">{kit.preco}</td>
+                                        <td className="px-6 py-4 border-t-2 ">{kit.statusKit}</td>
+                                     
+                                        <td className="px-6 py-4 border-t-2 ">
+                                        <Link to={"/kiteditar"}><button type="button"
+                                                className="bg-orange text-white py-2 px-4 rounded hover:bg-black hover:text-orange duration-500">
+                                               
                                                 Abrir
                                             </button>
+                                            </Link>
                                         </td>
                                     </tr>
                                 ))}

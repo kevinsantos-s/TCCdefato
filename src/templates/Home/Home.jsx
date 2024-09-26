@@ -13,7 +13,7 @@ const Home = () => {
            <Sidebar />
            <div className="p-3 w-screen">
                 <Header 
-                    goto={'/home'}
+                    goto={'/'}
                     title={'Home'}
                     />
                 <h2>Conteúdo Home</h2>
