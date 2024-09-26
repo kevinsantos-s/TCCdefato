@@ -5,14 +5,14 @@ import { useState } from "react"
 import { useEffect } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import { listarUsuario } from "../../common/services/Service"
-
+ 
 const UsuariosLista = () => {
     const navigate = useNavigate();
     const goTo = () => {
         navigate('/usuarioler')
     }
     const [usuarios, setUsuarios] = useState([]);
-
+ 
     useEffect(() => {
         async function getUsuario() {
             const data = await listarUsuario()
@@ -20,46 +20,47 @@ const UsuariosLista = () => {
         }
         getUsuario();
     }, [])
-
+ 
     return (
         <div className="flex flex-row">
         <div className="flex flex-row" >
             <Sidebar />
-            <div className="w-full">
+            <div className=" md:w-full">
                 <Header
                     goto={'/usuario'}
                     title={'Lista de Usuarios'}
-
+ 
                 />
-                <section className="m-2 p-2 shadow-lg ">
-                    <div >
-                        <table className="table table-striped table-hover">
-                            <thead>
+                <section className="m-2 p-2 shadow-lg">
+                    <div className="relative">
+                        <table className="text-left ">
+                            <thead className="">
                                 <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Acesso</th>
-                                    <th scope="col">Cadastro</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Abrir</th>
+                                    <th className="">ID</th>
+                                    <th className="">Nome</th>
+                                    <th className="">Email</th>
+                                    <th className="">Acesso</th>
+                                    <th className="">Cadastro</th>
+                                    <th className="">Status</th>
+                                    <th className="">Abrir</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className=" relative ">
                                 {usuarios?.map((usuario) => (
-                                    <tr key={usuario.id}>
-                                        <td scope="row">{usuario.id}</td>
-                                        <td>{usuario.nome}</td>
-                                        <td>{usuario.email}</td>
-                                        <td>{usuario.nivelAcesso}</td>
-                                        <td>{usuario.dataCadastro}</td>
-                                        <td>{usuario.statusUsuario}</td>
-                                        <td>
-                                            <button type="button"
-                                                className="bg-orange text-white py-2 px-4 rounded md:ml-8  hover:bg-white hover:text-orange duration-500">
-                                                {/* <i className="bi bi-envelope-open me-2"></i> */}
+                                    <tr className="" key={usuario.id}>
+                                        <td className="">{usuario.id}</td>
+                                        <td className="">{usuario.nome}</td>
+                                        <td className="">{usuario.email}</td>
+                                        <td className="">{usuario.nivelAcesso}</td>
+                                        <td className="">{usuario.dataCadastro}</td>
+                                        <td className="">{usuario.statusUsuario}</td>
+                                        <td className="">
+                                            <Link to={"/usuarioeditar"}><button type="button"
+                                                className="bg-orange text-white py-2 px-4 rounded   hover:bg-black hover:text-orange duration-500">
+                                               
                                                 Abrir
                                             </button>
+                                            </Link>
                                         </td>
                                     </tr>
                                 ))}
@@ -72,5 +73,5 @@ const UsuariosLista = () => {
         </div>
     )
 }
-
+ 
 export default UsuariosLista

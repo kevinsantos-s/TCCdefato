@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"; 
 import "../Header/Header.css";
-import Logo from '../../assets/KitFit.png'
 
-const Header = ({goto, title, logo}) => {
+const Header = ({goto, title }) => {
 
     return (
         <div className="
@@ -13,7 +12,6 @@ const Header = ({goto, title, logo}) => {
                 <span className="font-bold h-2">{title}</span>
             </div>
             <div>
-                <img src={logo} alt="logo" />
             </div>
         </div>
     )

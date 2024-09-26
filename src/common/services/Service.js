@@ -24,3 +24,15 @@ export async function listarKit(){
     }
 }
 
+export async function criarKit(body){
+    let URL = "kit/create";
+    try{
+        const response = await API.post(URL, body);
+        console.log(response.data);
+        return response.data;
+    }catch (error){
+        throw new Error('NAO FOI KRL')
+    }
+}
+
+

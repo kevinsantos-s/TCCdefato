@@ -17,7 +17,7 @@ const Kit = () => {
                         <Link to={'/kitnovo'}>
                             <button className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500"> Novo Kits</button>
                         </Link>
-                        <Link to={'/kitslista'} >
+                        <Link to={'/kitlista'} >
                             <button className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500">Lista de Kits</button>
                         </Link>
                     </div>
