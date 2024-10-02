@@ -2,6 +2,9 @@ import { Link } from "react-router-dom"
 import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
 
+
+
+
 const KitEditar = () => {
 
     return (

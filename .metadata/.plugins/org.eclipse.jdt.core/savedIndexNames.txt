@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+Z:\TCCdefato\.metadata\.plugins\org.eclipse.jdt.core
+4223209564.index
+3950840933.index
+4250452944.index

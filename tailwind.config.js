@@ -26,6 +26,7 @@ export default {
       'black': '#000000',
       'white': '#ffffff',
       'orange': '#c55b11',
+      'red': '#ff0000'
     },
   },
   plugins: [],

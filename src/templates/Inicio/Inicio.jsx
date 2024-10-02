@@ -8,7 +8,7 @@ const Home = () => {
    
     <div  id='inicioscroll'>
       <div className="home-text">
-      <img className='w-screen h-[600px]' src={Maromba} alt="" />
+      <img className='w-screen h-1/4   md:w-screen md:h-[600px]' src={Maromba} alt="" />
        
       </div>
     </div>
