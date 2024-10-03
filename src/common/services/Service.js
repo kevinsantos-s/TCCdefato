@@ -46,6 +46,18 @@ export async function deletarKit(id){
     }
 }
 
+export async function deletarusuario(id){
+    let URL = `usuario/inativa/${id}`;
+    try{
+        const response = await API.put(URL);
+        return response;
+    }catch (error){
+        console.log(error)
+        throw new Error("ERRO AO DELETAR "+ error)
+
+    }
+}
+
 
 
 

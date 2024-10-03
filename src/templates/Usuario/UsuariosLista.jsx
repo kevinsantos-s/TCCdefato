@@ -5,6 +5,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import { listarUsuario } from "../../common/services/Service"
+import { deletarusuario } from "../../common/services/Service"
 
 const UsuariosLista = () => {
     const navigate = useNavigate();
@@ -20,6 +21,15 @@ const UsuariosLista = () => {
         }
         getUsuario();
     }, [])
+
+    const deleteusuarioFunction = (id) =>{
+        deletarusuario(id).then(()=>{
+            console.log("foi");
+        }).catch((error)=>{
+            console.log("NAO FOI, VOCE TINHA RAZAO " + error)
+        })
+    }
+
 
     return (
         <div className="flex flex-row">
@@ -75,6 +85,7 @@ const UsuariosLista = () => {
                                             </button>
                                             </Link>
                                         </td>
+                                        <td className="px-6 py-4 border-t-2 "><button type='button' onClick={() => deleteusuarioFunction(usuario.id)} className="bg-red text-white py-2 px-4 m-2 rounded hover:bg-black hover:text-orange duration-500" >Apagar</button></td>
                                     </tr>
                                 ))}
                             </tbody>
