@@ -13,8 +13,8 @@ export async function listarUsuario(){
 }
 
 export async function listarKit(status){
-    let URL = `kit/findAll/${status}`;
-    try{       const response = await API.get(URL);
+    let URL = `kit/findAll`;
+    try{const response = await API.get(URL);
         console.log(response.data);
         return response.data;
     }catch (error){

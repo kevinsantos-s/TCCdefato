@@ -9,8 +9,6 @@ import axios from 'axios';
 import API from "../../common/services/api"
 
 
-
-
 const KitsLista = () => {
     const navigate = useNavigate();
     const goTo = () => {
