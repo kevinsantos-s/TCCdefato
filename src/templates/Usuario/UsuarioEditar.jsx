@@ -16,7 +16,7 @@ const UsuarioEditar = () => {
                     <form className="flex-row gap-3">
                         <div className="flex-col md-2">
                             <label htmlFor="inputID" className="form-label">ID</label>
-                            <input type="text" className="form-control" id="inputID" readOnly />
+                            <input type="text" className="form-control p-3 border rounded-lg"  id="inputID" readOnly />
                         </div>
                         <div className="flex-col md-5">
                             <label htmlFor="inputNome" className="form-label">Nome</label>

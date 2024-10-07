@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+
 import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
 
@@ -16,17 +16,17 @@ const UsuarioNovo = () => {
                 <section className="m-2 p-2 shadow-lg">
                     <form className="flex-row gap-3">
                         <div className="flex-col md-5">
-                            <label htmlFor="inputNome" className="form-label">Nome</label>
-                            <input type="text" className="form-control" id="inputNome" />
+                            <label htmlFor="inputNome" className="form-label text-lg font-semibold mb-2">Nome</label>
+                            <input type="text" className="w-full p-3 border rounded-lg"  id="inputNome" />
                         </div>
                         <div className="flex-col md-5">
-                            <label htmlFor="inputEmail4" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="inputEmail4" />
+                            <label htmlFor="inputEmail4" className="form-label text-lg font-semibold mb-2">Email</label>
+                            <input type="email"  className="w-full p-3 border rounded-lg" id="inputEmail4" />
                         </div>
                        
-                        <div className="flex-col md-2">
+                        <div className="flex flex-col md-2">
                             <label htmlFor="inputAcesso" className="form-label">Acesso</label>
-                            <select id="inputAcesso" className="form-select">
+                            <select id="inputAcesso" className="w-1/4">
                                 <option selected>Nível de Acesso</option>
                                 <option>...</option>
                             </select>

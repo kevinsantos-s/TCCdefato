@@ -37,7 +37,7 @@ const UsuariosLista = () => {
             <Sidebar />
             <div className="">
                 <Header
-                    goto={'/    '}
+                    goto={'/usuario'}
                     title={'Lista de Usuarios'}
 
                 />
