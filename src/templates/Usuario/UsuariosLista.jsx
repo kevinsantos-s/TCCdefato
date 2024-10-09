@@ -22,10 +22,10 @@ const UsuariosLista = () => {
         getUsuario();
     }, [])
 
-    const deleteusuarioFunction = (id) =>{
-        deletarusuario(id).then(()=>{
+    const deleteusuarioFunction = (id) => {
+        deletarusuario(id).then(() => {
             window.alert("Usuário excluido!")
-        }).catch((error)=>{
+        }).catch((error) => {
             console.log("NAO FOI, VOCE TINHA RAZAO " + error)
         })
     }
@@ -33,42 +33,42 @@ const UsuariosLista = () => {
 
     return (
         <div className="flex flex-row">
-        <div className="flex flex-row" >
-            <Sidebar />
-            <div className="">
-                <Header
-                    goto={'/usuario'}
-                    title={'Lista de Usuarios'}
+            <div className="flex flex-row" >
+                <Sidebar />
+                <div className="">
+                    <Header
+                        goto={'/usuario'}
+                        title={'Lista de Usuarios'}
 
-                />
-<div className="relative overflow-x-auto">
-    <table className="w-[100%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-black bg-grey uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr scope="col" className="px-6 py-3">
-                <th scope="col" className="px-6 py-3">
-                    ID
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Nome
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Email
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Acesso
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Cadastro
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Status
-                </th>
-                <th scope="col" className="px-6 py-3">
-                    Abrir
-                </th>
-            </tr>
-        </thead>
-        <tbody className=" relative ">
+                    />
+                    <div className="relative overflow-x-auto">
+                        <table className="w-[100%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-black bg-grey uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr scope="col" className="px-6 py-3">
+                                    <th scope="col" className="px-6 py-3">
+                                        ID
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Nome
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Email
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Acesso
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Cadastro
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Status
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Abrir
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody className=" relative ">
                                 {usuarios?.map((usuario) => (
                                     <tr className="" key={usuario.id}>
                                         <th scope="row" className="px-6 py-4 border-t-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{usuario.id}</th>
@@ -80,7 +80,6 @@ const UsuariosLista = () => {
                                         <td className="px-6 py-4 border-t-2 ">
                                             <Link to={"/usuarioeditar"}><button type="button"
                                                 className="bg-orange text-white py-2 px-4 rounded hover:bg-black hover:text-orange duration-500">
-                                               
                                                 Abrir
                                             </button>
                                             </Link>
@@ -89,10 +88,10 @@ const UsuariosLista = () => {
                                     </tr>
                                 ))}
                             </tbody>
-    </table>
-</div>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

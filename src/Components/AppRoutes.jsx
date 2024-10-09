@@ -17,24 +17,24 @@ const AppRoutes = () => {
     return (
         <div>
             <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/inicio" element={<Inicio />} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/home" element={<Home />} />
+                <Route path="/" element={<App />} />
+                <Route path="/inicio" element={<Inicio />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/home" element={<Home />} />
 
-            
-           <Route path="/usuario" element={<Usuario />} />
-           <Route path="/usuarioslista" element={<UsuariosLista />} />
-           <Route path="/usuarionovo" element={<UsuarioNovo />} />
-           <Route path="/usuarioeditar" element={<UsuarioEditar />} />
 
-           <Route path="/kit" element={<Kit />} />
-           <Route path="/kitlista" element={<KitsLista />} />
-           <Route path="/kitnovo" element={<KitNovo />} />
-           <Route path="/kiteditar" element={<KitEditar />} />
+                <Route path="/usuario" element={<Usuario />} />
+                <Route path="/usuarioslista" element={<UsuariosLista />} />
+                <Route path="/usuarionovo" element={<UsuarioNovo />} />
+                <Route path="/usuarioeditar/:id" element={<UsuarioEditar />} />
+
+                <Route path="/kit" element={<Kit />} />
+                <Route path="/kitlista" element={<KitsLista />} />
+                <Route path="/kitnovo" element={<KitNovo />} />
+                <Route path="/kiteditar/:id" element={<KitEditar />} />
             </Routes>
         </div>
     )
 
-} 
+}
 export default AppRoutes

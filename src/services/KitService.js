@@ -9,4 +9,9 @@ const findById = (id) => {
     return http.mainInstance.get(API_URL + `findById/${id}`);
 };
 
+const KitService = {
+    findAll,
+    findById,
+}
+
 export default KitService;
