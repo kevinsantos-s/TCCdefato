@@ -83,20 +83,24 @@ const UsuarioEditar = () => {
                         </div>
                         <div className="flex-col md-5">
                             <label htmlFor="inputNome" className="form-label">Nome</label>
-                            <input type="text" className="form-control" id="inputNome" />
+                            <input type="text" className="form-control" id="inputNome" 
+                            defaultValue={nome.id} />
                         </div>
                         <div className="flex-col md-5">
                             <label htmlFor="inputEmail4" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="inputEmail4" />
+                            <input type="email" className="form-control" id="inputEmail4" 
+                            defaultValue={email.id} />
                         </div>
 
                         <div className="flex-col md-4">
                             <label htmlFor="inputData" className="form-label">Data de Cadastro</label>
-                            <input type="text" className="form-control" id="inputData" readOnly />
+                            <input type="text" className="form-control" id="inputData" readOnly 
+                            defaultValue={dataCadastro.id} />
                         </div>
                         <div className="flex-col md-4">
                             <label htmlFor="inputStatus" className="form-label">Status</label>
-                            <input type="text" className="form-control" id="inputStatus" readOnly />
+                            <input type="text" className="form-control" id="inputStatus" readOnly 
+                             defaultValue={statusUsuario.id}/>
                         </div>
                         <div className="flex-col md-4">
                             <label htmlFor="inputAcesso" className="form-label">Acesso</label>

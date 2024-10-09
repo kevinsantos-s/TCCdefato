@@ -65,7 +65,7 @@ const KitsLista = () => {
                                             <td className="px-6 py-4 border-t-2 ">{kit.statusKit}</td>
 
                                             <td className="px-6 py-4 border-t-2 ">
-                                                <button type="button" onClick={goTo(kit.id)}
+                                                <button type="button" onClick={() => goTo(kit.id)}
                                                     className="bg-orange text-white py-2 px-4 rounded hover:bg-black hover:text-orange duration-500" to={"/kiteditar"}>
                                                     Abrir
                                                 

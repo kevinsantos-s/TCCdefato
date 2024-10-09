@@ -87,23 +87,27 @@ const KitEditar = () => {
                                      defaultValue={kit.nome}/>
                                 </div>
                                 <div className="flex flex-col">
-                                    <label htmlFor="inputEmail4" className="form-label text-lg font-semibold pt-2 mb-2">Email</label>
-                                    <input type="email" className="w-[46%] p-3 border rounded-lg" id="inputEmail4" />
+                                    <label htmlFor="inputdescricao" className="form-label text-lg font-semibold pt-2 mb-2">descricao</label>
+                                    <input type="descricao" className="w-[46%] p-3 border rounded-lg" id="inputdescricao"
+                                    defaultValue={kit.descricao}/> 
                                 </div>
                             </div>
                    
                             <div className=" flex gap-8 md-2">
                                 <div className="flex flex-col">
                                     <label htmlFor="inputID" className="form-label w-1/2 text-lg font-semibold mb-2">ID</label>
-                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputID" readOnly />
+                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputID" readOnly 
+                                    defaultValue={kit.id}/>
                                 </div>
                                 <div className="flex flex-col">
-                                    <label htmlFor="inputData" className="form-label text-lg font-semibold mb-2">Data de Cadastro</label>
-                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputData" readOnly />
+                                    <label htmlFor="inputprodutos" className="form-label text-lg font-semibold mb-2">produtos </label>
+                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputprodutos" readOnly 
+                                    defaultValue={kit.produtos}/>
                                 </div>
                                 <div className="flex flex-col">
                                     <label htmlFor="inputStatus" className="form-label text-lg font-semibold mb-2">Status</label>
-                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" readOnly />
+                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" readOnly 
+                                    defaultValue={kit.nome}/>
                                 </div>
                             </div>
 
