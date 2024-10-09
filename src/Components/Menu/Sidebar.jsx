@@ -21,8 +21,8 @@ const Sidebar = () => {
    const [open,setOpen] = useState(true);
 
     return (
-           <section className="flex gap-6">
-            <div className={`bg-black min-h-screen w-72 duration-500 text-white px-4`}>
+           <section className="flex ">
+            <div className='bg-black h-screen w-72 duration-500 text-white px-4'>
               
                 
                 <div className="mt-4 flex flex-col gap-4 relative">

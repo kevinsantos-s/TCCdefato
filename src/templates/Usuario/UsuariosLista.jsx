@@ -24,7 +24,7 @@ const UsuariosLista = () => {
 
     const deleteusuarioFunction = (id) =>{
         deletarusuario(id).then(()=>{
-            console.log("foi");
+            window.alert("Usuário excluido!")
         }).catch((error)=>{
             console.log("NAO FOI, VOCE TINHA RAZAO " + error)
         })

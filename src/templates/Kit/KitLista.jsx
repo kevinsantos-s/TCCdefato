@@ -8,6 +8,9 @@ import { deletarKit, listarKit } from "../../common/services/Service"
 import axios from 'axios';
 import API from "../../common/services/api"
 
+function msgexcluir(){
+    
+}
 
 const KitsLista = () => {
     const navigate = useNavigate();
@@ -26,7 +29,7 @@ const KitsLista = () => {
     
     const deletekitFunction = (id) =>{
         deletarKit(id).then(()=>{
-            console.log("foi");
+            window.alert("Kit excluido!")
         }).catch((error)=>{
             console.log("NAO FOI, VOCE TINHA RAZAO " + error)
         })
@@ -51,12 +54,12 @@ const KitsLista = () => {
                                     <th scope="col" className="px-6 py-3">ID</th>
                                     <th scope="col" className="px-6 py-3">Nome</th>
                                     <th scope="col" className="px-6 py-3">Descrição</th>
-                                    <th scope="col" className="px-6 py-3">Código</th>
+
                                     <th scope="col" className="px-6 py-3">Preço</th>
                                     <th scope="col" className="px-6 py-3">Status</th>
                           
                                     <th scope="col" className="px-6 py-3">Abrir</th>
-                                    <th scope="col" className="px-6 py-3">Excluir</th>
+                                    <th scope="col" className="px-6 text-black py-3">Excluir</th>
                                 </tr>
                             </thead>
                             <tbody className="relative">
@@ -65,7 +68,6 @@ const KitsLista = () => {
                                         <td className="px-6 py-4 border-t-2 " >{kit.id}</td>
                                         <td className="px-6 py-4 border-t-2 ">{kit.nome}</td>
                                         <td className="px-6 py-4 border-t-2 ">{kit.descricao}</td>
-                                        <td className="px-6 py-4 border-t-2 ">{kit.codigo}</td>
                                         <td className="px-6 py-4 border-t-2 ">{kit.preco}</td>
                                         <td className="px-6 py-4 border-t-2 ">{kit.statusKit}</td>
                                      
@@ -78,7 +80,7 @@ const KitsLista = () => {
                                             </Link>
 
                                         </td>
-                                        <td className="px-6 py-4 border-t-2 "><button type='button' onClick={() => deletekitFunction(kit.id)} className="bg-red text-white py-2 px-4 m-2 rounded hover:bg-black hover:text-orange duration-500" >Apagar</button></td>
+                                        <td className="px-6 py-4 border-t-2 "><button type='button'  onClick={() => deletekitFunction(kit.id)} className="bg-red text-white py-2 px-4 m-2 rounded hover:bg-black hover:text-orange duration-500" >Apagar</button></td>
                                     </tr>
                                 ))}
                             </tbody>

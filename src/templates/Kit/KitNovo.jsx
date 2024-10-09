@@ -17,7 +17,7 @@ const KitNovo = () => {
     const handleSubmit = async ()=>{
         console.log(novoKit);
         criarKit(novoKit).then(
-            console.log("FOI")
+            window.alert("Kit criado!")
         )
     }
 

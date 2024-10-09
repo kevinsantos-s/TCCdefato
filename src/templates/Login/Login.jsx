@@ -54,7 +54,7 @@ const Login = () => {
       <div className='w-1/2 h-full bg-[#000000] flex flex-col p-10 justify-around items-center '>
         <img src={Logo} className='w-screen h-[200px] md:w-1/2 md:h-1/4 min-w-[300px] min-h-[200px]' />
 
-        <form className='w-full flex flex-col mb-[100px] min-h-[300px] max-h-[400px] min-w-[300px] max-w-[400px]' onSubmit={handleSubmit}>
+        <form className='w-full flex flex-col mb-[100px] min-h-[300px] max-h-[400px] min-w-[300px] max-w-[400px]' onSubmit={handleSubmit} >
           <div className='w-full flex flex-col mb-5'>
             <h3 className='text-3xl font-semibold mb-2 text-[#ffffff]'>Login</h3>
             <p className='text-[#ffffff] text-base '>Bem-vindo, insira suas credenciais!</p>
@@ -67,7 +67,6 @@ const Login = () => {
               value={formData.email || ""}
               onChange={handleChange} />
 
-//senha de 1 a 8
             <input className='w-full text-[#ffffff] my-2 py-2 border-b border-[#ffffff] outline-none focus:outline-none bg-[#000000]'
               type="password" placeholder='Senha'
               name="password"
@@ -90,7 +89,7 @@ const Login = () => {
 
           </div>
           <div className='w-full flex flex-col my-4'>
-            <button className='w-full bg-[#F36D04] rounded-md my-2 p-4 text-center flex items-center justify-center cursor-pointer'>
+            <button className='w-full bg-[#F36D04] rounded-md my-2 p-4 text-center flex items-center justify-center cursor-pointer ' >
               Entrar
             </button>
 

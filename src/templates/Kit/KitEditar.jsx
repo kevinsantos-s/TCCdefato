@@ -15,46 +15,54 @@ const KitEditar = () => {
                     goto={'/Kit'}
                     title={'Editar Kit'}
                 />
-                <section className="m-2 p-2 shadow-lg">
-                    <form className="flex-row gap-3">
-                        <div className="flex-col md-2">
-                            <label htmlFor="inputID" className="form-label">ID</label>
-                            <input type="text" className="form-control" id="inputID" readOnly />
+                
+                <section className="m-6 h-[55%] p-2 justify-center align-center shadow-lg">
+                    <form className="content-center mt-12">
+                    <div className="flex flex-col gap-3  m-2 ">
+                    <div className="flex flex-col  md-2">
+                    <div className="flex flex-col"> 
+                        <label htmlFor="inputNome" className="form-labe  text-lg font-semibold pt-2 mb-2">Nome</label>
+                        <input type="text" className="w-[46%]  p-3 border rounded-lg" id="inputNome" />
                         </div>
-                        <div className="flex-col md-5">
-                            <label htmlFor="inputNome" className="form-label">Nome</label>
-                            <input type="text" className="form-control" id="inputNome" />
+                        <div className="flex flex-col"> 
+                        <label htmlFor="inputEmail4" className="form-label text-lg font-semibold pt-2 mb-2">Email</label>
+                        <input type="email" className="w-[46%] p-3 border rounded-lg" id="inputEmail4" />
                         </div>
-                        <div className="flex-col md-5">
-                            <label htmlFor="inputEmail4" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="inputEmail4" />
-                        </div>
-
-                        <div className="flex-col md-4">
-                            <label htmlFor="inputData" className="form-label">Data de Cadastro</label>
-                            <input type="text" className="form-control" id="inputData" readOnly />
-                        </div>
-                        <div className="flex-col md-4">
-                            <label htmlFor="inputStatus" className="form-label">Status</label>
-                            <input type="text" className="form-control" id="inputStatus" readOnly />
-                        </div>
-                        <div className="flex-col md-4">
-                            <label htmlFor="inputAcesso" className="form-label">Acesso</label>
-                            <select id="inputAcesso" className="form-select">
-                                <option selected>Nível de Acesso</option>
-                                <option>...</option>
-                            </select>
+                    </div>
+                    <div className="flex-col md-2">
+                        
+                    </div>
+                        <div className=" flex gap-8 md-2">
+                            <div className="flex flex-col"> 
+                            <label htmlFor="inputID" className="form-label w-1/2 text-lg font-semibold mb-2">ID</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputID" readOnly />
+                            </div>
+                            <div className="flex flex-col"> 
+                            <label htmlFor="inputData" className="form-label text-lg font-semibold mb-2">Data de Cadastro</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputData" readOnly />
+                            </div>
+                            <div className="flex flex-col"> 
+                            <label htmlFor="inputStatus" className="form-label text-lg font-semibold mb-2">Status</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" readOnly />
+                            </div>
                         </div>
                         
-                        <div className="col-12">
-                            <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500">
+
+                       
+                        
+                        
+                        
+                        </div>
+                        <div className="flex flex-row">
+                            <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-  hover:bg-black hover:text-orange duration-500">
                                 Gravar
                             </button>
                         </div>
                     </form>
                 </section>
+                </div>
             </div>
-        </div>
+        
     )
 }
 
