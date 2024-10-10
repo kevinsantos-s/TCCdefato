@@ -52,6 +52,8 @@ const alterar = (id, data) => {
     formData.append('nome', data.nome);
     formData.append('email', data.email);
     formData.append('nivelAcesso', data.nivelAcesso);
+
+    return http.mainInstance.put(API_URL + `alterar/${id}`, formData);
 }
 
 const update = (id, data) => {
