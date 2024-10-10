@@ -1,14 +1,13 @@
 import { Link, useParams } from "react-router-dom"
 import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
-import { useRef, useState } from "react";
-import UsuarioService from "../../services/UsuarioService";
+import { useEffect, useRef, useState } from "react"
+import UsuarioService from "../../services/UsuarioService.js";
+
 
 const UsuarioEditar = () => {
-    const { id } = useParams();
-    const _dbRecords = useRef(true);
-
-    const initialObjectState = {
+ 
+    const objectValues = {
         id: null,
         nome: "",
         email: "",
@@ -18,10 +17,14 @@ const UsuarioEditar = () => {
         dataCadastro: "",
         statusUsuario: ""
     };
-    const [usuario, setUsuario] = useState(initialObjectState);
-    const [message, setMessage] = useState();
+    const [usuario, setUsuario] = useState(objectValues);
+ 
+    const { id } = useParams();
+    const _dbRecords = useRef(true);
+    const [formData, setFormData] = useState({});
     const [successful, setSuccessful] = useState(false);
-
+    const [message, setMessage] = useState();
+ 
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -29,19 +32,15 @@ const UsuarioEditar = () => {
     }
 
     useEffect(() => {
-        if (_dbRecords.current) {
-            UsuarioService.findById(id)
-                .then(response => {
-                    const usuario = response.data;
-                    setUsuario(usuario);
-                })
-                .catch(e => {
-                    console.log(e);
-                });
-        } return () => {
-            _dbRecords.current = false;
-        }
-    }, [id]);
+        UsuarioService.findById(id).then(
+            (response) => {
+                const usuario = response.data;
+                setUsuario(usuario);
+            }
+        ).catch((error) => {
+            console.log(error);
+        })
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -68,40 +67,55 @@ const UsuarioEditar = () => {
 
     return (
         <div className="flex">
-            <Sidebar />
-            <div className="w-full">
-                <Header
-                    goto={'/usuario'}
-                    title={'Editar Usuário'}
-                />
-                <section className="m-2 p-2 shadow-lg">
-                    <form className="flex-row gap-3" onSubmit={handleSubmit}>
+        <Sidebar />
+        <div className="p-3 w-100">
+            <Header
+                goto={'/usuario'}
+                title={'Editar Usuário'}
+            />
+            <section className="h-[50%] p-2 bg-grey justify-center align-center shadow-lg">
+                {!successful && (
+                    <>
+                        <form className="row g-3" onSubmit={handleSubmit}>
+
                         <div className="flex-col md-2">
                             <label htmlFor="inputID" className="form-label">ID</label>
                             <input type="text" className="form-control p-3 border rounded-lg" id="inputID" readOnly
-                            defaultValue={usuario.id} />
+                              name="id"
+                              value={usuario.id || ""} 
+                              />
                         </div>
+
                         <div className="flex-col md-5">
                             <label htmlFor="inputNome" className="form-label">Nome</label>
                             <input type="text" className="form-control" id="inputNome" 
-                            defaultValue={nome.id} />
+                             name="nome"
+                             value={usuario.nome || ""}
+                             onChange={handleChange} />
                         </div>
+
                         <div className="flex-col md-5">
                             <label htmlFor="inputEmail4" className="form-label">Email</label>
                             <input type="email" className="form-control" id="inputEmail4" 
-                            defaultValue={email.id} />
+                              name="email"
+                              value={usuario.email || ""} />
                         </div>
 
                         <div className="flex-col md-4">
                             <label htmlFor="inputData" className="form-label">Data de Cadastro</label>
                             <input type="text" className="form-control" id="inputData" readOnly 
-                            defaultValue={dataCadastro.id} />
+                                  name="dataCadastro"
+                                  value={usuario.dataNascimento || ""}  
+                                  onChange={handleChange} />  
                         </div>
+
                         <div className="flex-col md-4">
                             <label htmlFor="inputStatus" className="form-label">Status</label>
                             <input type="text" className="form-control" id="inputStatus" readOnly 
-                             defaultValue={statusUsuario.id}/>
+                                name="statusUsuario"
+                                value={usuario.statusUsuario || ""} />
                         </div>
+
                         <div className="flex-col md-4">
                             <label htmlFor="inputAcesso" className="form-label">Acesso</label>
                             <select id="inputAcesso" className="form-select">
@@ -109,13 +123,24 @@ const UsuarioEditar = () => {
                                 <option>...</option>
                             </select>
                         </div>
-
+                        
                         <div className="col-12">
-                            <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-8  hover:bg-black hover:text-orange duration-500">
-                                Gravar
-                            </button>
+                                    <button type="submit" className="btn btn-primary">
+                                        Gravar
+                                    </button>
+                                </div>
+                            </form>
+                        </>
+                )}
+                    {message && (
+                        <div className="m-3">
+                            <div className={
+                                "text-center h4 fst-italic py-9 rounded-2 " + (successful ? "bg-success" : "bg-danger")
+                            }>
+                                {message}
+                            </div>
                         </div>
-                    </form>
+                    )}
                 </section>
             </div>
         </div>

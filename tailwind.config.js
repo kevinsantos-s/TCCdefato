@@ -21,12 +21,18 @@ export default {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        'xll': '0 0 20px 0 rgba(0, 0, 0, 0.3)',
+      }
+ 
+    },
     colors:{
       'black': '#000000',
       'white': '#ffffff',
       'orange': '#c55b11',
-      'red': '#ff0000'
+      'red': '#ff0000',
+      'grey': "#f9fafb"
     },
   },
   plugins: [],

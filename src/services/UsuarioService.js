@@ -47,6 +47,13 @@ const create = data => {
     return http.mainInstance.post(API_URL + "create", formData);
 };
 
+const alterar = (id, data) => {
+    const formData = new FormData();
+    formData.append('nome', data.nome);
+    formData.append('email', data.email);
+    formData.append('nivelAcesso', data.nivelAcesso);
+}
+
 const update = (id, data) => {
     return http.multipartInstance.put(API_URL + `update/${id}`, data);
 };
@@ -71,6 +78,7 @@ const UsuarioService = {
     logout,
     getCurrentUser,
     create,
+    alterar,
     update,
     alterarSenha,
     findByNome,

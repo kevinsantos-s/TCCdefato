@@ -3,14 +3,16 @@ import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
 import { useState } from "react"
 import { useEffect } from "react"
-import UsuarioService from "../../services/UsuarioService"
+import UsuarioService from "../../services/UsuarioService.js"
 import { listarUsuario } from "../../common/services/Service"
 import { deletarusuario } from "../../common/services/Service"
 
 const UsuariosLista = () => {
     const navigate = useNavigate();
-    const goTo = () => {
-        navigate('/usuarioler')
+    
+    const goTo = (id) => {
+        navigate(`/usuarioeditar/${id}`)
+       
     }
     const [usuarios, setUsuarios] = useState([]);
 
@@ -66,6 +68,9 @@ const UsuariosLista = () => {
                                     <th scope="col" className="px-6 py-3">
                                         Abrir
                                     </th>
+                                    <th scope="col" className="px-10 py-3">
+                                        Apagar
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody className=" relative ">
@@ -78,15 +83,15 @@ const UsuariosLista = () => {
                                         <td className="px-6 py-4 border-t-2 ">{usuario.dataCadastro}</td>
                                         <td className="px-6 py-4 border-t-2 ">{usuario.statusUsuario}</td>
                                         <td className="px-6 py-4 border-t-2 ">
-                                            <Link to={"/usuarioeditar"}><button type="button"
+                                            <button type="button" onClick ={() => goTo(usuario.id)}
                                                 className="bg-orange text-white py-2 px-4 rounded hover:bg-black hover:text-orange duration-500">
                                                 Abrir
                                             </button>
-                                            </Link>
+                                            
                                         </td>
                                         <td className="px-6 py-4 border-t-2 "><button type='button' onClick={() => deleteusuarioFunction(usuario.id)} className="bg-red text-white py-2 px-4 m-2 rounded hover:bg-black hover:text-orange duration-500" >Apagar</button></td>
                                     </tr>
-                                ))}
+                                    ))}
                             </tbody>
                         </table>
                     </div>
