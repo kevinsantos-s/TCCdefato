@@ -30,17 +30,18 @@ const KitsLista = () => {
     }
 
     return (
-        <div className="flex flex-row">
-            <div className="flex flex-row" >
+        <div className="flex bg-grey ">
                 <Sidebar />
                 <div className="w-full">
+                   
+                    <div className=" container flex flex-col w-full justify-items-center">
                     <Header
                         goto={'/kit'}
                         title={'Lista de Kits'}
 
                     />
-                    <section className="relative overflow-x-auto">
-                        <div >
+                    <section className="h-[45%] w-full p-2 bg-grey flex flex-col justify-items-center shadow-lg align-center shadow-2xl rounded-bl-xl rounded-br-xl">
+                        <div>
                             <table className="w-[100%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                                 <thead className="text-xs text-black bg-grey uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr scope="col" className="px-6 py-3">
@@ -79,8 +80,9 @@ const KitsLista = () => {
                             </table>
                         </div>
                     </section>
+                    </div>
                 </div>
-            </div>
+            
         </div>
     )
 }

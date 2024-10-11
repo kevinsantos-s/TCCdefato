@@ -66,66 +66,70 @@ const UsuarioEditar = () => {
     }
 
     return (
-        <div className="flex">
+        <div className="flex  bg-grey">
         <Sidebar />
-        <div className="p-3 w-100">
+        <div className="w-full">
+            
+            <div className=" container flex flex-col w-full justify-items-center">
             <Header
                 goto={'/usuario'}
                 title={'Editar Usuário'}
             />
-            <section className="h-[50%] p-2 bg-grey justify-center align-center shadow-lg">
+            <section className=" h-[45%] w-full p-2 bg-white flex flex-col justify-items-center shadow-lg align-center shadow-2xl rounded-bl-xl rounded-br-xl">
                 {!successful && (
                     <>
-                        <form className="row g-3" onSubmit={handleSubmit}>
-
-                        <div className="flex-col md-2">
-                            <label htmlFor="inputID" className="form-label">ID</label>
-                            <input type="text" className="form-control p-3 border rounded-lg" id="inputID" readOnly
-                              name="id"
-                              value={usuario.id || ""} 
-                              />
-                        </div>
-
-                        <div className="flex-col md-5">
-                            <label htmlFor="inputNome" className="form-label">Nome</label>
-                            <input type="text" className="form-control" id="inputNome" 
+                        <form className="content-center mt-3" onSubmit={handleSubmit}>
+                        <div className="flex flex-col gap-3  m-2">
+                        <div className="flex flex-col  md-2">
+                        <div className="flex flex-col">
+                            <label htmlFor="inputNome" className="form-labe  text-lg font-semibold pt-2 mb-2">Nome:</label>
+                            <input type="text" className="w-[58%]  p-3 border rounded-lg" id="inputNome" 
                              name="nome"
                              value={usuario.nome || ""}
                              onChange={handleChange} />
                         </div>
-
-                        <div className="flex-col md-5">
-                            <label htmlFor="inputEmail4" className="form-label">Email</label>
-                            <input type="email" className="form-control" id="inputEmail4" 
+                        <div className="flex flex-col">
+                            <label htmlFor="inputEmail4" className="form-labe  text-lg font-semibold pt-2 mb-2">Email</label>
+                            <input type="email" className="w-[58%]  p-3 border rounded-lg" id="inputEmail4" 
                               name="email"
                               value={usuario.email || ""} />
                         </div>
+                        </div>
 
-                        <div className="flex-col md-4">
-                            <label htmlFor="inputData" className="form-label">Data de Cadastro</label>
-                            <input type="text" className="form-control" id="inputData" readOnly 
+                        {/* parte do view only */}
+                        <div className="flex gap-8 md-2">
+                        <div className="flex flex-col">
+                            <label htmlFor="inputID" className="form-label w-1/2 text-lg font-semibold mb-2">ID</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputID" readOnly
+                              name="id"
+                              value={usuario.id || ""} 
+                              />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="inputData" className="form-label w-full h-1/2 text-lg font-semibold mb-2">Data de Cadastro</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputData" readOnly 
                                   name="dataCadastro"
                                   value={usuario.dataNascimento || ""}  
                                   onChange={handleChange} />  
                         </div>
-
-                        <div className="flex-col md-4">
-                            <label htmlFor="inputStatus" className="form-label">Status</label>
-                            <input type="text" className="form-control" id="inputStatus" readOnly 
+                        <div className="flex flex-col">
+                            <label htmlFor="inputStatus" className="form-label w-full h-1/2 text-lg font-semibold mb-2">Status</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" readOnly 
                                 name="statusUsuario"
                                 value={usuario.statusUsuario || ""} />
                         </div>
-
-                        <div className="flex-col md-4">
-                            <label htmlFor="inputAcesso" className="form-label">Acesso</label>
-                            <select id="inputAcesso" className="form-select">
+                        <div className="flex flex-col">
+                            <label htmlFor="inputAcesso" className="form-label w-full  text-lg font-semibold mb-2">Acesso</label>
+                            <select id="inputAcesso" className="w-full flex flex-col p-3 border rounded-lg">
                                 <option selected>Nível de Acesso</option>
                                 <option>...</option>
                             </select>
                         </div>
+                        </div>
+                        </div>
                         
                         <div className="col-12">
-                                    <button type="submit" className="btn btn-primary">
+                                    <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-  hover:bg-black hover:text-orange duration-500   ">
                                         Gravar
                                     </button>
                                 </div>
@@ -142,6 +146,7 @@ const UsuarioEditar = () => {
                         </div>
                     )}
                 </section>
+                </div>
             </div>
         </div>
     )

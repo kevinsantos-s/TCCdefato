@@ -22,7 +22,7 @@ const Sidebar = () => {
 
     return (
            <section className="flex ">
-            <div className='bg-black m-5 rounded-3xl hover:shadow-orange hover:shadow-xll  h-[870px] w-72 duration-500 text-white px-4'>
+            <div className='bg-black mr-5 hover:shadow-orange hover:shadow-xll  h-[919px] w-72 duration-500 text-white px-4'>
               
                 
                 <div className="mt-4 flex flex-col gap-4 relative">
