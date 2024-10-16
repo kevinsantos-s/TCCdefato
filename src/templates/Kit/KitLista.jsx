@@ -30,9 +30,9 @@ const KitsLista = () => {
     }
 
     return (
-        <div className="flex bg-grey ">
+        <div className="flex bg-grey flex-row ">
                 <Sidebar />
-                <div className="w-full">
+                <div className="shadow-black drop-shadow-xl w-full">
                    
                     <div className=" container flex flex-col w-full justify-items-center">
                     <Header
@@ -40,10 +40,10 @@ const KitsLista = () => {
                         title={'Lista de Kits'}
 
                     />
-                    <section className="h-[45%] w-full p-2 bg-grey flex flex-col justify-items-center shadow-lg align-center shadow-2xl rounded-bl-xl rounded-br-xl">
+                    <section className="h-[45%] w-full p-2 bg-white flex flex-col justify-items-center shadow-lg align-center shadow-2xl rounded-bl-xl rounded-br-xl">
                         <div>
                             <table className="w-[100%] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                <thead className="text-xs text-black bg-grey uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <thead className="text-xs text-black bg-white uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                     <tr scope="col" className="px-6 py-3">
                                         <th scope="col" className="px-6 py-3">ID</th>
                                         <th scope="col" className="px-6 py-3">Nome</th>

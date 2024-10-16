@@ -8,13 +8,13 @@ const UsuarioNovo = () => {
     return (
         <div className="flex w-full bg-grey">
             <Sidebar />
-            <div className=" w-full">
+            <div className=" shadow-black drop-shadow-xl w-full">
                 <div className=" container flex flex-col w-full justify-items-center">
                 <Header
                     goto={'/usuario'}
                     title={'Novo Usuário'}
                 />
-                <section className=" h-[45%] w-full p-2 bg-white flex flex-col justify-items-center shadow-lg align-center shadow-2xl rounded-bl-xl rounded-br-xl">
+                <section className=" h-[45%] w-full p-2 bg-white flex flex-col justify-items-center  align-center  rounded-bl-xl rounded-br-xl">
                     <form className="content-center  mt-3">
                         <div className="flex flex-col  gap-3  m-2">
                         <div className="flex flex-col  md-2">

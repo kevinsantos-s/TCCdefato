@@ -69,27 +69,30 @@ const KitEditar = () => {
 
 
     return (
-        <div className="flex">
+        <div className="flex w-full bg-grey">
             <Sidebar />
-            <div className="w-full">
+            <div className="shadow-black drop-shadow-xl w-full">
+            <div className="container flex flex-col w-full justify-items-center">
                 <Header
                     goto={'/Kit'}
                     title={'Editar Kit'}
                 />
 
-                <section className="m-6 h-[55%] p-2 justify-center align-center shadow-lg">
-                    <form className="content-center mt-12" onSubmit={handleSubmit}>
+                <section className="h-[45%] w-full p-2 bg-white flex flex-col justify-items-center align-center  rounded-bl-xl rounded-br-xl">
+                    <form className="content-center mt-3" onSubmit={handleSubmit}>
                         <div className="flex flex-col gap-3  m-2 ">
                             <div className="flex flex-col  md-2">
                                 <div className="flex flex-col">
                                     <label htmlFor="inputNome" className="form-labe  text-lg font-semibold pt-2 mb-2">Nome:</label>
                                     <input type="text" className="w-[46%]  p-3 border rounded-lg" id="inputNome" 
-                                     defaultValue={kit.nome}/>
+                                     defaultValue={kit.nome}
+                                     onChange={handleChange} />
                                 </div>
                                 <div className="flex flex-col">
                                     <label htmlFor="inputdescricao" className="form-label text-lg font-semibold pt-2 mb-2">descricao</label>
                                     <input type="descricao" className="w-[46%] p-3 border rounded-lg" id="inputdescricao"
-                                    defaultValue={kit.descricao}/> 
+                                    defaultValue={kit.descricao}
+                                    onChange={handleChange}/> 
                                 </div>
                             </div>
                    
@@ -102,7 +105,8 @@ const KitEditar = () => {
                                 <div className="flex flex-col">
                                     <label htmlFor="inputprodutos" className="form-label text-lg font-semibold mb-2">produtos </label>
                                     <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputprodutos" readOnly 
-                                    defaultValue={kit.produtos}/>
+                                    defaultValue={kit.produtos}
+                                    onChange={handleChange}/>
                                 </div>
                                 <div className="flex flex-col">
                                     <label htmlFor="inputStatus" className="form-label text-lg font-semibold mb-2">Status</label>
@@ -124,6 +128,7 @@ const KitEditar = () => {
                         </div>
                     </form>
                 </section>
+                </div>
             </div>
         </div>
 

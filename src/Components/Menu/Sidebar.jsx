@@ -9,13 +9,15 @@ import Logo from "../../assets/KitFit.png"
 import { CiUser } from "react-icons/ci";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { FaRegCreditCard } from "react-icons/fa";
+import { FaHouse } from "react-icons/fa6";
 
 const Sidebar = () => {
 
    const menus = [
-    {name:"Usuario",link:'/usuarioslista',icon: CiUser  },
+    {name:"Home",link:'/home',icon: FaHouse },
+    {name:"Usuario",link:'/usuario',icon: CiUser  },
     {name:"Kits",link:'/kit',icon: MdOutlineProductionQuantityLimits  },
-    {name:"Mensalidade",link:'/mensalidade',icon: FaRegCreditCard },
+    
    ]
     
    const [open,setOpen] = useState(true);

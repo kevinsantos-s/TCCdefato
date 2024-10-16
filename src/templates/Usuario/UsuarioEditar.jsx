@@ -66,16 +66,16 @@ const UsuarioEditar = () => {
     }
 
     return (
-        <div className="flex  bg-grey">
+        <div className="flex w-full bg-grey">
         <Sidebar />
-        <div className="w-full">
+        <div className="shadow-black drop-shadow-xl w-full">
             
             <div className=" container flex flex-col w-full justify-items-center">
             <Header
                 goto={'/usuario'}
                 title={'Editar Usuário'}
             />
-            <section className=" h-[45%] w-full p-2 bg-white flex flex-col justify-items-center shadow-lg align-center shadow-2xl rounded-bl-xl rounded-br-xl">
+            <section className=" h-[45%] w-full p-2 bg-white flex flex-col justify-items-center align-center  rounded-bl-xl rounded-br-xl">
                 {!successful && (
                     <>
                         <form className="content-center mt-3" onSubmit={handleSubmit}>
@@ -120,9 +120,9 @@ const UsuarioEditar = () => {
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="inputAcesso" className="form-label w-full  text-lg font-semibold mb-2">Acesso</label>
-                            <select id="inputAcesso" className="w-full flex flex-col p-3 border rounded-lg">
-                                <option selected>Nível de Acesso</option>
-                                <option>...</option>
+                            <select id="inputAcesso" className="w-full flex flex-col p-3 border rounded-lg" >
+                                <option onChange={handleChange} selected>ADMIN</option>
+                                <option>CLIENTE</option>
                             </select>
                         </div>
                         </div>
