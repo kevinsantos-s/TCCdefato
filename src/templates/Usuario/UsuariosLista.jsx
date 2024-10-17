@@ -4,8 +4,7 @@ import Sidebar from '../../Components/Menu/Sidebar'
 import { useState } from "react"
 import { useEffect } from "react"
 import UsuarioService from "../../services/UsuarioService.js"
-import { listarUsuario } from "../../common/services/Service"
-import { deletarusuario } from "../../common/services/Service"
+import { listarUsuario, deletarUsuario } from "../../common/services/Service"
 
 const UsuariosLista = () => {
     const navigate = useNavigate();
@@ -25,7 +24,7 @@ const UsuariosLista = () => {
     }, [])
 
     const deleteusuarioFunction = (id) => {
-        deletarusuario(id).then(() => {
+        deletarUsuario(id).then(() => {
             window.alert("Usuário excluido!")
         }).catch((error) => {
             console.log("NAO FOI, VOCE TINHA RAZAO " + error)
@@ -89,7 +88,6 @@ const UsuariosLista = () => {
                                                 className="bg-orange text-white py-2 px-4 rounded hover:bg-black hover:text-orange duration-500">
                                                 Abrir
                                             </button>
-                                            
                                         </td>
                                         <td className="px-6 py-4 border-t-2 "><button type='button' onClick={() => deleteusuarioFunction(usuario.id)} className="bg-red text-white py-2 px-4 m-2 rounded hover:bg-black hover:text-orange duration-500" >Apagar</button></td>
                                     </tr>

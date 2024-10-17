@@ -4,13 +4,9 @@ import Sidebar from '../../Components/Menu/Sidebar'
 import { useEffect, useRef, useState } from "react";
 import KitService from "../../services/KitService";
 
-
-
 const KitEditar = () => {
-    const { id } = useParams();
-    const _dbRecords = useRef(true);
-
-    const initialObjectState = {
+ 
+    const objectValues = {
         id: null,
         nome: "",
         descricao: "",
@@ -19,10 +15,14 @@ const KitEditar = () => {
         preco: 0,
         statusKit: ""
     };
-    const [kit, setKit] = useState(initialObjectState);
-    const [message, setMessage] = useState();
+    const [kit, setKit] = useState(objectValues);
+ 
+    const { id } = useParams();
+    const _dbRecords = useRef(true);
+    const [formData, setFormData] = useState({});
     const [successful, setSuccessful] = useState(false);
-
+    const [message, setMessage] = useState();
+ 
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -30,19 +30,15 @@ const KitEditar = () => {
     }
 
     useEffect(() => {
-        if (_dbRecords.current) {
-            KitService.findById(id)
-                .then(response => {
-                    const kit = response.data;
-                    setKit(kit);
-                })
-                .catch(e => {
-                    console.log(e);
-                });
-        } return () => {
-            _dbRecords.current = false;
-        }
-    }, [id]);
+        KitService.findById(id).then(
+            (response) => {
+                const kit = response.data;
+                setKit(kit);
+            }
+        ).catch((error) => {
+            console.log(error);
+        })
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -67,71 +63,92 @@ const KitEditar = () => {
         )
     }
 
-
     return (
         <div className="flex w-full bg-grey">
-            <Sidebar />
-            <div className="shadow-black drop-shadow-xl w-full">
-            <div className="container flex flex-col w-full justify-items-center">
-                <Header
-                    goto={'/Kit'}
-                    title={'Editar Kit'}
-                />
-
-                <section className="h-[45%] w-full p-2 bg-white flex flex-col justify-items-center align-center  rounded-bl-xl rounded-br-xl">
-                    <form className="content-center mt-3" onSubmit={handleSubmit}>
-                        <div className="flex flex-col gap-3  m-2 ">
-                            <div className="flex flex-col  md-2">
-                                <div className="flex flex-col">
-                                    <label htmlFor="inputNome" className="form-labe  text-lg font-semibold pt-2 mb-2">Nome:</label>
-                                    <input type="text" className="w-[46%]  p-3 border rounded-lg" id="inputNome" 
-                                     defaultValue={kit.nome}
-                                     onChange={handleChange} />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label htmlFor="inputdescricao" className="form-label text-lg font-semibold pt-2 mb-2">descricao</label>
-                                    <input type="descricao" className="w-[46%] p-3 border rounded-lg" id="inputdescricao"
-                                    defaultValue={kit.descricao}
-                                    onChange={handleChange}/> 
-                                </div>
-                            </div>
-                   
-                            <div className=" flex gap-8 md-2">
-                                <div className="flex flex-col">
-                                    <label htmlFor="inputID" className="form-label w-1/2 text-lg font-semibold mb-2">ID</label>
-                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputID" readOnly 
-                                    defaultValue={kit.id}/>
-                                </div>
-                                <div className="flex flex-col">
-                                    <label htmlFor="inputprodutos" className="form-label text-lg font-semibold mb-2">produtos </label>
-                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputprodutos" readOnly 
-                                    defaultValue={kit.produtos}
-                                    onChange={handleChange}/>
-                                </div>
-                                <div className="flex flex-col">
-                                    <label htmlFor="inputStatus" className="form-label text-lg font-semibold mb-2">Status</label>
-                                    <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" readOnly 
-                                    defaultValue={kit.nome}/>
-                                </div>
-                            </div>
-
-
-
-
-
+        <Sidebar />
+        <div className="shadow-black drop-shadow-xl w-full">
+            
+            <div className=" container flex flex-col w-full justify-items-center">
+            <Header
+                goto={'/Kit'}
+                title={'Editar Kit'}
+            />
+            <section className=" h-[45%] w-full p-2 bg-white flex flex-col justify-items-center align-center  rounded-bl-xl rounded-br-xl">
+                {!successful && (
+                    <>
+                        <form className="content-center mt-3" onSubmit={handleSubmit}>
+                        <div className="flex flex-col gap-3  m-2">
+                        <div className="flex flex-col  md-2">
+                        <div className="flex flex-col">
+                            <label htmlFor="inputNome" className="form-labe  text-lg font-semibold pt-2 mb-2">Nome:</label>
+                            <input type="text" className="w-[58%]  p-3 border rounded-lg" id="inputNome" 
+                             name="nome"
+                             value={kit.nome || ""}
+                             onChange={handleChange} 
+                             />
 
                         </div>
-                        <div className="flex flex-row">
-                            <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-  hover:bg-black hover:text-orange duration-500">
-                                Gravar
-                            </button>
+                        <div className="flex flex-col">
+                            <label htmlFor="inputDescricao" className="form-labe  text-lg font-semibold pt-2 mb-2">Descrição:</label>
+                            <input type="text" className="w-[58%]  p-3 border rounded-lg" id="inputDescricao" 
+                              name="descricao"
+                              value={kit.descricao || ""} 
+                              onChange={handleChange} 
+                              />
                         </div>
-                    </form>
+                        </div>
+
+
+                        <div className="flex gap-8 md-2">
+                        <div className="flex flex-col">
+                            <label htmlFor="inputProdutos" className="form-label w-1/2 text-lg font-semibold mb-2">Produtos:</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputProdutos"
+                              name="produtos"
+                              value={kit.produtos || ""} 
+                              onChange={handleChange}
+                              />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="inputStatus" className="form-label w-full h-1/2 text-lg font-semibold mb-2">Status Do Kit</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" 
+                                name="statusKit"
+                                value={kit.statusKit || ""} 
+                                onChange={handleChange} 
+                                />
+                        </div>
+
+                        <div className="flex flex-col">
+                            <label htmlFor="inputPreco" className="form-label w-full h-1/2 text-lg font-semibold mb-2">Preço</label>
+                            <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputPreco" 
+                                name="preco"
+                                value={kit.preco || ""} 
+                                onChange={handleChange} 
+                                />
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <div className="col-12">
+                                    <button type="submit" className="bg-orange text-black m-2 py-2 px-4 rounded md:ml-  hover:bg-black hover:text-orange duration-500   ">
+                                        Gravar
+                                    </button>
+                                </div>
+                            </form>
+                        </>
+                )}
+                    {message && (
+                        <div className="m-3">
+                            <div className={
+                                "text-center h4 fst-italic py-9 rounded-2 " + (successful ? "bg-success" : "bg-danger")
+                            }>
+                                {message}
+                            </div>
+                        </div>
+                    )}
                 </section>
                 </div>
             </div>
         </div>
-
     )
 }
 

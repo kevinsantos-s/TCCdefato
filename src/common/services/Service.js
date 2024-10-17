@@ -12,6 +12,18 @@ export async function listarUsuario(){
     }
 }
 
+export async function listarAssinatura(){
+    let URL = "assinatura/findAll";
+    try{
+        const response = await API.get(URL);
+        console.log(response.data);
+        return response.data;
+    }catch (error){
+        console.log(error)
+        return false;
+    }
+}
+
 export async function listarKit(status){
     let URL = `kit/findAll`;
     try{const response = await API.get(URL);
@@ -46,7 +58,7 @@ export async function deletarKit(id){
     }
 }
 
-export async function deletarusuario(id){
+export async function deletarUsuario(id){
     let URL = `usuario/inativa/${id}`;
     try{
         const response = await API.put(URL);

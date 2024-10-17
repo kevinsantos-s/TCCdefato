@@ -31,7 +31,7 @@ const KitNovo = () => {
                     title={'Novo Kit'}
                 />
                 <section className="h-[45%]  w-full p-2 bg-white flex flex-col justify-items-center  align-center  rounded-bl-xl rounded-br-xl">
-                    <form className="flex-row gap-3">
+                    <form className="flex-row gap-3" onSubmit={handleSubmit}>
                         <div className="ml-2 flex flex-col gap-3  m-2">
                             <div className=" flex gap-8 md-2">
                             <div className="flex flex-col">

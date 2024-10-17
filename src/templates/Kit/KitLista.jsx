@@ -7,6 +7,11 @@ import { deletarKit, listarKit } from "../../common/services/Service"
 
 const KitsLista = () => {
     const navigate = useNavigate();
+    
+    const goTo = (id) => {
+        navigate(`/kiteditar/${id}`)
+       
+    }
     const [kits, setKits] = useState([]);
 
     useEffect(() => {
@@ -15,7 +20,7 @@ const KitsLista = () => {
             setKits(data)
         }
         getKit();
-    }, []);
+    }, [])
 
     const deletekitFunction = (id) => {
         deletarKit(id).then(() => {
@@ -24,11 +29,7 @@ const KitsLista = () => {
             console.log("NAO FOI, VOCE TINHA RAZAO " + error)
         })
     }
-
-    const goTo = (id) => {
-        navigate(`/kiteditar/${id}`)
-    }
-
+    
     return (
         <div className="flex bg-grey flex-row ">
                 <Sidebar />
