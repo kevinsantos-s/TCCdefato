@@ -1,71 +1,72 @@
 import API from "./api";
 
-export async function listarUsuario(){
+export async function listarUsuario() {
     let URL = "usuario/findAll";
-    try{
+    try {
         const response = await API.get(URL);
         console.log(response.data);
         return response.data;
-    }catch (error){
+    } catch (error) {
         console.log(error)
         return false;
     }
 }
 
-//export async function listarAssinatura(){
-  //  let URL = "assinatura/findAll";
-   // try{
-     //   const response = await API.get(URL);
-       // console.log(response.data);
-       // return response.data;
-    //  }catch (error){
-      //  console.log(error)
-      //  return false;
-  //  }
-//  }
-
-export async function listarKit(status){
-    let URL = `kit/findAll`;
-    try{const response = await API.get(URL);
+export async function buscarAssinaturaUsuario() {
+    let URL = "assinatura/findAll";
+    try {
+        const response = await API.get(URL);
         console.log(response.data);
         return response.data;
-    }catch (error){
+    } catch (error) {
         console.log(error)
         return false;
     }
 }
 
-export async function criarKit(body){
+export async function listarKit(status) {
+    let URL = `kit/findAll`;
+    try {
+        const response = await API.get(URL);
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.log(error)
+        return false;
+    }
+}
+
+export async function criarKit(body) {
     let URL = "kit/create";
-    try{
+    try {
         const response = await API.post(URL, body);
         console.log(response.data);
         return response.data;
-    }catch (error){
+    } catch (error) {
         throw new Error('NAO FOI KRL')
     }
 }
 
-export async function deletarKit(id){
+export async function deletarKit(id) {
     let URL = `kit/inativa/${id}`;
-    try{
+    try {
         const response = await API.put(URL);
         return response;
-    }catch (error){
+    } catch (error) {
         console.log(error)
-        throw new Error("ERRO AO DELETAR "+ error)
+        throw new Error("ERRO AO DELETAR " + error)
 
     }
 }
 
-export async function deletarUsuario(id){
+export async function deletarUsuario(id) {
     let URL = `usuario/inativa/${id}`;
-    try{
+    try {
         const response = await API.put(URL);
         return response;
-    }catch (error){
+    } catch (error) {
         console.log(error)
-        throw new Error("ERRO AO DELETAR "+ error)
+        throw new Error("ERRO AO DELETAR " + error)
 
     }
 }
