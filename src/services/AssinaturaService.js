@@ -1,8 +1,12 @@
 import http from '../common/http-common';
-const API_URL = "kit/";
+const API_URL = "assinatura/";
 
 const findAll = () => {
     return http.mainInstance.get(API_URL + 'findAll');
+};
+
+const buscarAssinaturaUsuario = (id) => {
+    return http.mainInstance.get(API_URL + `buscarAssinaturaUsuario/${id}`);
 };
 
 const findById = (id) => {
@@ -26,6 +30,7 @@ const AssinaturaService = {
     findAll,
     findById,
     alterar,
+    buscarAssinaturaUsuario
 }
 
 export default AssinaturaService;

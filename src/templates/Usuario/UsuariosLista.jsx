@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import UsuarioService from "../../services/UsuarioService.js"
 import { listarUsuario, deletarUsuario } from "../../common/services/Service"
 
+
 const UsuariosLista = () => {
     const navigate = useNavigate();
     

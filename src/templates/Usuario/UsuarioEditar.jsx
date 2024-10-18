@@ -3,6 +3,9 @@ import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService.js";
+import AssinaturaService from "../../services/AssinaturaService.js";
+
+import { buscarAssinaturaUsuario } from "../../services/AssinaturaService.js"
 
 
 const UsuarioEditar = () => {
@@ -17,7 +20,9 @@ const UsuarioEditar = () => {
         dataCadastro: "",
         statusUsuario: ""
     };
+
     const [usuario, setUsuario] = useState(objectValues);
+    
  
     const { id } = useParams();
     const _dbRecords = useRef(true);
@@ -41,6 +46,25 @@ const UsuarioEditar = () => {
             console.log(error);
         })
     }, []);
+
+    useEffect(() => {
+        AssinaturaService.buscarAssinaturaUsuario(id).then(
+            (response) => {
+                console.log(response);
+            }
+        ).catch((error) => {
+            console.log(error);
+        })
+    }, []);
+
+   // useEffect(() => {
+     //   async function getUsuario() {
+       //     const data = await listarUsuario()
+         //   setUsuarios(data)
+       //     }
+       //   getUsuario();
+    //   }, [])
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
