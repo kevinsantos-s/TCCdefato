@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import suplementoA from '../../assets/suplemento-1.png'
 import suplementoB from '../../assets/suplemento-2.png'
 import suplementoC from '../../assets/suplemento-3.png'
-
-
+ 
+ 
 const Suplemento = () => {
   const cards = [
     {
@@ -24,7 +24,7 @@ const Suplemento = () => {
       descricao: 'Suplemento alimentar para auxiliar uma vida mais saudável.',
     },
   ];
-  
+ 
   return (
     <div className="card-container">
       {cards.map((card, index) => (
@@ -33,7 +33,7 @@ const Suplemento = () => {
           <div className="card-body">
             <h2 className="card-title">{card.titulo}</h2>
             <p className="card-description">{card.descricao}</p>
-            <Link to={'/register'} className="comprar-btn">Peça já</Link>
+            <Link to={'/Produto'} className="comprar-btn">Peça já</Link>
           </div>
         </div>
       ))}
@@ -41,5 +41,5 @@ const Suplemento = () => {
   );
 };
 import './Suplemento.css'
-
+ 
 export default Suplemento

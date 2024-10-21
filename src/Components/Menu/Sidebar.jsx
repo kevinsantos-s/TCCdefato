@@ -10,23 +10,23 @@ import { CiUser } from "react-icons/ci";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { FaRegCreditCard } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
-
+ 
 const Sidebar = () => {
-
+ 
    const menus = [
     {name:"Home",link:'/home',icon: FaHouse },
-    {name:"Usuario",link:'/usuario',icon: CiUser  },
+    {name:"Usuario",link:'/usuarioslista',icon: CiUser  },
     {name:"Kits",link:'/kit',icon: MdOutlineProductionQuantityLimits  },
-    
+   
    ]
-    
+   
    const [open,setOpen] = useState(true);
-
+ 
     return (
            <section className="flex ">
             <div className='bg-black mr-5 hover:shadow-orange hover:shadow-xll  h-[919px] w-72 duration-500 text-white px-4'>
-              
-                
+             
+               
                 <div className="mt-4 flex flex-col gap-4 relative">
                 <img src={Logo} />
                     {
@@ -36,10 +36,10 @@ const Sidebar = () => {
                         {React.createElement(  menu?.icon ,{size:'20'})}
                     </div>
                     <h2 style={{transitionDelay:`${i + 3}00ms,`}} className="text-left text-base">{menu?.name}</h2>
-                    
+                   
                     </Link>
                         ))
-                    
+                   
                     }
                 </div>
             </div>
@@ -47,5 +47,5 @@ const Sidebar = () => {
            </section>
     )
 }
-
-export default Sidebar     
+ 
+export default Sidebar    

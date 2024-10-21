@@ -3,11 +3,6 @@ import Header from "../../Components/Header/Header"
 import Sidebar from '../../Components/Menu/Sidebar'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService.js";
-import AssinaturaService from "../../services/AssinaturaService.js";
-
-// import { buscarAssinaturaUsuario } from "../../services/AssinaturaService.js"
-import { buscarAssinaturaUsuario } from "../../common/services/Service";
-
 
 const UsuarioEditar = () => {
 
@@ -48,58 +43,6 @@ const UsuarioEditar = () => {
         })
     }, []);
 
-    //useEffect(() => {
-    //    AssinaturaService.buscarAssinaturaUsuario(id).then(
-    //        (response) => {
-    //            console.log(response);
-    //        }
-    //    ).catch((error) => {
-    //        console.log(error);
-    //    })
-   // }, []);
-
-   // const [assinaturas, setAssinaturas] = useState([]);
-
-   // useEffect(() => {
-   //     async function getAssinatura() {
-    //        const data = await buscarAssinaturaUsuario()
-   //         setAssinaturas(data)
-   //     }
-   //     getAssinatura();
-  //  }, [])
-
-  const [assinaturas, setAssinaturas] = useState([]);
-
-  useEffect(() => {
-      async function getAssinatura() {
-          const data = await buscarAssinaturaUsuario()
-          setAssinaturas(data)
-      }
-      getAssinatura();
-  }, [])
-    //const objectValues2 = {
-    //    id: null,
-    //    dataAssinatura: "",
-    //    codigo: "",
-    //   usuario_id: "",
-     //   nivelAcesso: "",
-    //    foto: null,
-    //    dataCadastro: "",
-    //    statusUsuario: ""
- //   };
-
-   // const [assinatura, setAssinatura] = useState(objectValues2);
-
-
-    // useEffect(() => {
-    //   async function getUsuario() {
-    //     const data = await listarUsuario()
-    //   setUsuarios(data)
-    //     }
-    //   getUsuario();
-    //   }, [])
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setMessage("");
@@ -122,7 +65,7 @@ const UsuarioEditar = () => {
             }
         )
     }
-
+    
     return (
         <div className="flex w-full bg-grey">
             <Sidebar />
@@ -205,43 +148,6 @@ const UsuarioEditar = () => {
 
                         )}
                     </section>
-                </div>
-                <div className="h-[45%] w-full p-2 bg-white flex flex-col justify-items-center  align-center rounded-bl-xl rounded-br-xl">
-                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <thead className="text-xs text-black uppercase w-full bg-white dark:bg-gray-700 dark:text-gray-400">
-                            <tr scope="col" className="px-6 py-3">
-                                <th scope="col" className="px-6 py-3">
-                                    ID
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    dataAssinatura
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    codigo
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    kit_id
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    statusAssinatura
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody className="relative ">
-                        {assinaturas?.map((assinatura) => (
-                            <tr className="" key={assinatura.id}>
-                                <th scope="row" className="px-6 py-4 border-t-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{assinatura.id}</th>
-                                <td className="px-6 py-4 border-t-2 ">{assinatura.dataAssinatura}</td>
-                                <td className="px-6 py-4 border-t-2 ">{assinatura.codigo}</td>
-                                <td className="px-6 py-4 border-t-2 ">{assinatura.usuario_id}</td>
-                                <td className="px-6 py-4 border-t-2 ">{assinatura.kit_id}</td>
-                                <td className="px-6 py-4 border-t-2 ">{assinatura.statusAssinatura}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                    </table>
-                
-                  
                 </div>
             </div>
         </div>
