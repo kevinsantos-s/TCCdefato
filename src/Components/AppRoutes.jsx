@@ -11,6 +11,7 @@ import Kit from "../templates/Kit/Kit"
 import KitsLista from "../templates/Kit/KitLista"
 import KitNovo from "../templates/Kit/KitNovo"
 import KitEditar from "../templates/Kit/KitEditar"
+import Produto from "./Product/Product"
 
 const AppRoutes = () => {
 
@@ -21,7 +22,7 @@ const AppRoutes = () => {
                 <Route path="/inicio" element={<Inicio />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/home" element={<Home />} />
-
+                <Route path="/produto" element={<Produto/>}/>
 
                 <Route path="/usuario" element={<Usuario />} />
                 <Route path="/usuarioslista" element={<UsuariosLista />} />

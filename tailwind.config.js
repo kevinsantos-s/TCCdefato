@@ -32,7 +32,8 @@ export default {
       'white': '#ffffff',
       'orange': '#c55b11',
       'red': '#ff0000',
-      'grey': "#f9fafb"
+      'grey': "#f9fafb",
+      'green': "#32CD32"
     },
   },
   plugins: [],
