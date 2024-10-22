@@ -23,8 +23,9 @@ const Sidebar = () => {
    const [open,setOpen] = useState(true);
  
     return (
-           <section className="flex ">
-            <div className='bg-black mr-5 hover:shadow-orange hover:shadow-xll  h-[919px] w-72 duration-500 text-white px-4'>
+        
+           <section className="flex">
+            <div className='bg-black  mr-5 hover:shadow-orange hover:shadow-xll  h-screen w-72 duration-500 text-white px-4'>
              
                
                 <div className="mt-4 flex flex-col gap-4 relative">

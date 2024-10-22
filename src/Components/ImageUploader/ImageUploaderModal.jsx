@@ -59,9 +59,9 @@ const ImageUploaderModal = ({ setFile, setImage, chosenImage }) => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" onClick={deleteFile}
-                                className="" data-bs-dismiss="modal">Cancelar</button>
+                                className="bg-orange  text-black m-2 py-2 px-2 rounded hover:bg-red duration-500" data-bs-dismiss="modal">Cancelar</button>
                             <button type="button" onClick={confirmFile}
-                                className="btn btn-primary" data-bs-dismiss="modal">Confirmar</button>
+                                className="bg-black  text-white m-2 py-2 px-4 rounded  hover:bg-green hover:text-black duration-500" data-bs-dismiss="modal">Confirmar</button>
                         </div>
                     </div>
                 </div>
