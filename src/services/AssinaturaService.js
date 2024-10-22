@@ -5,13 +5,15 @@ const findAll = () => {
     return http.mainInstance.get(API_URL + 'findAll');
 };
 
-const buscarAssinaturaUsuario = (id) => {
-    return http.mainInstance.get(API_URL + `buscarAssinaturaUsuario/${id}`);
-};
+//const buscarAssinaturaPorusuEmail = (usuEmail) => {
+//    return http.mainInstance.get(API_URL + `buscarAssinaturaPorusuEmail/${usuEmail}`);
+//   };
 
 const findById = (id) => {
     return http.mainInstance.get(API_URL + `findById/${id}`);
 };
+
+
 
 const create = data => {
     const formData = new FormData();
@@ -48,7 +50,7 @@ const alterar = (id, data) => {
 const AssinaturaService = {
     findAll,
     findById,
-    buscarAssinaturaUsuario,
+    buscarAssinaturaPorusuEmail,
     create,
     alterar,
    

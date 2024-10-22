@@ -12,8 +12,12 @@ export async function listarUsuario() {
     }
 }
 
-export async function buscarAssinaturaUsuario() {
-    let URL = "assinatura/findAll";
+//export async function buscarAssinaturaPorusuEmail(usuEmail) {
+//    return await axios.get(`/assinatura/buscarAssinaturaUsuario/${usuEmail}`);
+//    }
+
+export async function buscarAssinaturaPorusuEmail() {
+    let URL = `/assinatura/buscarAssinaturaUsuario/${usuEmail}`;
     try {
         const response = await API.get(URL);
         console.log(response.data);

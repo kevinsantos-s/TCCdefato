@@ -8,4 +8,6 @@ const findAll = () => {
 const AssinaturaService = {
     findAll,
 }
+
 export default AssinaturaService;
+

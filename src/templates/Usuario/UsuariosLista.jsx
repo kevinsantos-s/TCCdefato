@@ -39,6 +39,20 @@ const UsuariosLista = () => {
         usuario.nome.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    const goToAssinatura = async (emailUsu) => {
+        try {
+            const response = await fetch(`/assinatura/buscarAssinaturaUsuario/${emailUsu}`);
+            if (!response.ok) {
+                throw new Error('Erro ao buscar assinatura');
+            }
+            const assinatura = await response.json();
+            console.log(assinatura); // Aqui você pode exibir a assinatura ou redirecionar para uma nova página
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    };
+    
+
     return (
         <div className="flex bg-grey flex-row">
 
@@ -91,6 +105,9 @@ const UsuariosLista = () => {
                                             Abrir
                                         </th>
                                         <th scope="col" className="px-10 py-3">
+                                            Assinatura
+                                        </th>
+                                        <th scope="col" className="px-10 py-3">
                                             Apagar
                                         </th>
                                     </tr>
@@ -110,7 +127,7 @@ const UsuariosLista = () => {
                                                     Abrir
                                                 </button>
 
-                                                <button type="button" onClick={() => goTo(usuario.id)}
+                                                <button type="button" onClick={() => goTo(usuario.email)}
                                                     className="bg-orange text-white py-2 px-4 rounded hover:bg-black hover:text-orange duration-500">
                                                     Assinatura
                                                 </button>
