@@ -106,13 +106,7 @@ const UsuarioEditar = () => {
                                                     value={usuario.id || ""}
                                                 />
                                             </div>
-                                            <div className="flex flex-col">
-                                                <label htmlFor="inputData" className="form-label w-full h-1/2 text-lg font-semibold mb-2">Data de Cadastro</label>
-                                                <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputData" readOnly
-                                                    name="dataCadastro"
-                                                    value={usuario.dataNascimento || ""}
-                                                    onChange={handleChange} />
-                                            </div>
+                                           
                                             <div className="flex flex-col">
                                                 <label htmlFor="inputStatus" className="form-label w-full h-1/2 text-lg font-semibold mb-2">Status</label>
                                                 <input type="text" className="w-full flex flex-col p-3 border rounded-lg" id="inputStatus" readOnly
